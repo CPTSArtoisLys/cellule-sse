@@ -1,0 +1,46 @@
+name: Alerte SSE
+description: Trace d'une alerte traitée par la cellule SSE de la CPTS Artois Lys (générée depuis l'outil)
+title: "[Nx] Alerte – "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ticket prérempli par l'outil Cellule SSE. Ce dépôt est public : n'indiquez aucune donnée de santé ni coordonnée personnelle.
+  - type: input
+    id: niveau
+    attributes:
+      label: Niveau retenu
+    validations:
+      required: true
+  - type: input
+    id: date_heure
+    attributes:
+      label: Date et heure de réception
+  - type: input
+    id: emetteur
+    attributes:
+      label: Émetteur
+  - type: input
+    id: risque
+    attributes:
+      label: Type de risque
+  - type: input
+    id: communes
+    attributes:
+      label: Communes touchées
+  - type: textarea
+    id: synthese
+    attributes:
+      label: Message reçu et éléments connus
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Justification du niveau
+  - type: textarea
+    id: contacts
+    attributes:
+      label: Contacts à mobiliser
+  - type: textarea
+    id: actions
+    attributes:
+      label: Actions
