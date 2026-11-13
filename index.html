@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cellule SSE – CPTS Artois Lys</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#F2F5F6; --surface:#FFFFFF; --ink:#16263A; --muted:#5A6B7B; --line:#CBD5DC; --soft:#E6ECEF;
+  --lys:#1D5C8C; --lys-soft:#DCE8F1; --focus:#1D5C8C;
+  --n0:#4F7563; --n1:#B98E10; --n2:#D26A12; --n3:#BF2A2A; --n4:#6E1E57;
+  --n0-bg:#E3EEE8; --n1-bg:#FBF1D2; --n2-bg:#FCE4CF; --n3-bg:#F8DADA; --n4-bg:#F0DCEA;
+  --zone-o:#2E7D6B; --zone-e:#8A5A1E;
+  --font:"Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#0F1A24; --surface:#16232F; --ink:#E5ECF1; --muted:#9AAAB8; --line:#2C3D4C; --soft:#1C2B38;
+    --lys:#6FA8D6; --lys-soft:#1D3447; --focus:#8EC0E8;
+    --n0-bg:#1B2D25; --n1-bg:#2E2810; --n2-bg:#33220F; --n3-bg:#361717; --n4-bg:#2E1528;
+    --n0:#7FB59B; --n1:#E2BD45; --n2:#F0954A; --n3:#EE6B6B; --n4:#D47FBA;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#0F1A24; --surface:#16232F; --ink:#E5ECF1; --muted:#9AAAB8; --line:#2C3D4C; --soft:#1C2B38;
+  --lys:#6FA8D6; --lys-soft:#1D3447; --focus:#8EC0E8;
+  --n0-bg:#1B2D25; --n1-bg:#2E2810; --n2-bg:#33220F; --n3-bg:#361717; --n4-bg:#2E1528;
+  --n0:#7FB59B; --n1:#E2BD45; --n2:#F0954A; --n3:#EE6B6B; --n4:#D47FBA;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--status-bg,var(--n0-bg))}
+a{color:var(--lys)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1,h2,h3{line-height:1.2;margin:0}
+h2{font-size:1.35rem}
+h3{font-size:1.05rem}
+p{margin:.4rem 0}
+small,.muted{color:var(--muted)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+
+/* Bandeau de statut : l'élément fort de la page */
+.status{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--status-bg,var(--n0-bg));border-bottom:4px solid var(--status,var(--n0));transition:background .3s,border-color .3s}
+.status-in{max-width:1280px;margin:0 auto;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.brand-wrap{display:flex;align-items:center;gap:.8rem;min-width:0}
+.logo{height:52px;width:auto;background:#fff;border-radius:8px;padding:4px 8px;display:block;flex:none}
+@media (max-width:480px){.logo{height:40px}}
+.brand{display:flex;flex-direction:column;min-width:10rem}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:flex-end;margin-top:.7rem;padding:.75rem .85rem;background:var(--soft);border:1px solid var(--line);border-radius:8px}
+.filters .field{flex:1 1 10rem;min-width:9rem}
+.filters .field.grow{flex:2 1 15rem}
+.filters .inline{flex-direction:row;flex-wrap:wrap;gap:.3rem 1rem}
+.filters .count{margin-left:auto;font-size:.88rem;color:var(--muted);align-self:center}
+.filters .btn{align-self:flex-end}
+.matrix .cell button.dim{opacity:.22}
+.empty-row td{color:var(--muted);font-style:italic}
+.brand b{font-size:1rem}
+.brand span{font-size:.85rem;color:var(--muted)}
+.level-chip{display:flex;align-items:center;gap:.7rem;margin-left:auto}
+.level-chip .code{font-size:2rem;font-weight:700;color:var(--status,var(--n0));line-height:1;font-variant-numeric:tabular-nums}
+.level-chip .txt{display:flex;flex-direction:column;line-height:1.25}
+.level-chip .txt b{font-size:1.05rem}
+.level-chip .txt span{font-size:.85rem;color:var(--muted)}
+nav.tabs{max-width:1280px;margin:0 auto;padding:0 1rem;display:flex;gap:.25rem;overflow-x:auto}
+nav.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:.55rem .8rem;color:var(--muted);white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);font-weight:700}
+
+main{max-width:1280px;margin:0 auto;padding:1.2rem 1rem 4rem}
+.view[hidden]{display:none}
+.grid-alert{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:1.5rem;align-items:start}
+@media (max-width:980px){.grid-alert{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem;margin-bottom:1rem}
+.step{display:grid;grid-template-columns:2.2rem 1fr;gap:.2rem .8rem}
+.step>.num{grid-row:span 2;width:2rem;height:2rem;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-variant-numeric:tabular-nums}
+.step>h2{align-self:center}
+.step>.body{grid-column:2;min-width:0}
+@media (max-width:520px){.step{grid-template-columns:1fr}.step>.num{grid-row:auto}.step>.body{grid-column:1}}
+.intro{max-width:70ch}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:.8rem 1rem;margin-top:.8rem}
+.field{display:flex;flex-direction:column;gap:.25rem}
+.field.wide{grid-column:1/-1}
+label,.label{font-weight:700;font-size:.92rem}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input[type=text],input[type=tel],input[type=email],input[type=datetime-local],input[type=number],input[type=search],select,textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:.5rem .6rem;background:var(--surface)}
+textarea{min-height:5rem;resize:vertical}
+fieldset{border:0;padding:0;margin:0}
+.checks{display:flex;flex-direction:column;gap:.35rem}
+.check{display:flex;gap:.5rem;align-items:flex-start;font-weight:400}
+.check input{margin-top:.25rem;width:1.05rem;height:1.05rem;accent-color:var(--lys)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-wrap:wrap}
+.seg label{font-weight:400;padding:.4rem .7rem;border-right:1px solid var(--line);cursor:pointer;display:flex;align-items:center;gap:.35rem}
+.seg label:last-child{border-right:0}
+.seg input{accent-color:var(--lys)}
+.seg label:has(input:checked){background:var(--lys-soft);font-weight:700}
+.force{border-left:4px solid var(--n3);padding:.6rem .8rem;background:var(--n3-bg);border-radius:0 6px 6px 0}
+.force .check{font-weight:700}
+.warn{border-left:4px solid var(--n2);background:var(--n2-bg);padding:.6rem .8rem;border-radius:0 6px 6px 0;margin:.6rem 0}
+.note{border-left:4px solid var(--lys);background:var(--lys-soft);padding:.6rem .8rem;border-radius:0 6px 6px 0;margin:.6rem 0;font-size:.92rem}
+
+/* Carte */
+.map-wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1rem;align-items:start}
+@media (max-width:720px){.map-wrap{grid-template-columns:1fr}}
+svg.map{width:100%;height:auto;background:var(--soft);border-radius:8px;border:1px solid var(--line);touch-action:manipulation}
+svg.map .river{fill:none;stroke:var(--lys);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+svg.map .river.lawe{stroke-width:2;stroke-dasharray:1 0}
+svg.map .rlabel{fill:var(--lys);font-size:11px;font-style:italic;paint-order:stroke;stroke:var(--soft);stroke-width:3px}
+svg.map .ext circle{fill:var(--surface);stroke:var(--muted);stroke-width:1.5}
+svg.map .ext text{fill:var(--muted);font-size:10px;paint-order:stroke;stroke:var(--soft);stroke-width:3px}
+svg.map .ext rect{fill:var(--muted)}
+svg.map .com{cursor:pointer}
+svg.map .com circle{stroke-width:2.5;fill:var(--surface)}
+svg.map .com.o circle{stroke:var(--zone-o)}
+svg.map .com.e circle{stroke:var(--zone-e)}
+svg.map .com.sel circle{fill:var(--status,var(--n3));stroke:var(--ink)}
+svg.map .com text{font-size:12px;fill:var(--ink);paint-order:stroke;stroke:var(--soft);stroke-width:3px}
+svg.map .com:focus-visible circle{stroke:var(--focus);stroke-width:4}
+svg.map .divider{stroke:var(--muted);stroke-dasharray:4 4;stroke-width:1}
+.legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-top:.4rem}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;border:2.5px solid;vertical-align:-1px;margin-right:.3rem}
+.comlist{display:grid;grid-template-columns:1fr 1fr;gap:.15rem .6rem}
+.comlist .grp{grid-column:1/-1;font-weight:700;font-size:.88rem;margin-top:.4rem}
+
+/* Décision */
+.decision{position:sticky;top:calc(env(safe-area-inset-top,0px) + 112px)}
+@media (max-width:980px){.decision{position:static}}
+.verdict{border-radius:10px;padding:1rem 1.1rem;background:var(--status-bg);border:2px solid var(--status);margin-bottom:1rem}
+.verdict .big{font-size:1.6rem;font-weight:700;color:var(--status);line-height:1.15}
+.verdict .sub{font-weight:700;margin-top:.2rem}
+.meter{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin:.8rem 0 .3rem}
+.meter span{height:8px;border-radius:2px;background:var(--line)}
+.meter span.on{background:var(--status)}
+.why{margin:.6rem 0 0;padding-left:1.1rem;font-size:.92rem}
+.why li{margin:.15rem 0}
+.why .pts{font-variant-numeric:tabular-nums;color:var(--muted)}
+.actions-list{margin:.4rem 0 0;padding-left:1.1rem}
+.actions-list li{margin:.25rem 0}
+.contact{display:grid;grid-template-columns:4.6rem 1fr;gap:.6rem;padding:.55rem 0;border-top:1px solid var(--line)}
+.contact:first-of-type{border-top:0}
+.contact .when{font-size:.8rem;font-weight:700;color:var(--status);font-variant-numeric:tabular-nums}
+.contact .who b{display:block}
+.contact .who .role{font-size:.85rem;color:var(--muted)}
+.contact .who .why2{font-size:.82rem;color:var(--muted);font-style:italic}
+.contact .links{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.15rem;font-size:.9rem}
+.contact .missing{color:var(--n2);font-size:.85rem}
+.btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.btn{border:1px solid var(--ink);background:var(--surface);border-radius:6px;padding:.5rem .85rem;font-weight:700}
+.btn.primary{background:var(--ink);color:var(--surface)}
+.btn.ghost{border-color:var(--line);font-weight:400}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+td select{min-width:4.2rem;padding:.3rem}
+.tag{display:inline-block;border-radius:4px;padding:.05rem .45rem;font-size:.8rem;font-weight:700;white-space:nowrap}
+.lvl-mineur{background:var(--n0-bg);color:var(--n0)}
+.lvl-secondaire{background:var(--n1-bg);color:var(--n1)}
+.lvl-important{background:var(--n2-bg);color:var(--n2)}
+.lvl-tres{background:var(--n3-bg);color:var(--n3)}
+.chips{display:flex;flex-wrap:wrap;gap:.25rem}
+.chip{font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:0 .35rem;background:var(--soft)}
+.chip.hot{border-color:var(--n3);color:var(--n3);background:var(--n3-bg)}
+
+/* Matrice IRi */
+.matrix{display:grid;grid-template-columns:3.2rem repeat(4,minmax(0,1fr));gap:3px;max-width:760px}
+.matrix .ax{font-size:.8rem;color:var(--muted);display:grid;place-items:center;text-align:center;padding:.2rem}
+.matrix .cell{min-height:5.2rem;border-radius:4px;padding:.3rem;display:flex;flex-direction:column;gap:.2rem;font-size:.76rem}
+.matrix .cell .s{font-weight:700;font-size:.72rem;opacity:.8}
+.matrix .cell button{border:1px solid currentColor;background:var(--surface);color:var(--ink);border-radius:3px;padding:.05rem .3rem;text-align:left;font-size:.74rem;line-height:1.25}
+
+.mc-row{display:grid;grid-template-columns:5.5rem 9rem 1fr 1fr 8rem 2rem;gap:.4rem;align-items:start}
+@media (max-width:760px){.mc-row{grid-template-columns:1fr 1fr}}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:760px){.cols2{grid-template-columns:1fr}}
+details.panel>summary{cursor:pointer;font-weight:700;font-size:1.05rem}
+details.panel[open]>summary{margin-bottom:.6rem}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 1rem);transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:.6rem 1rem;border-radius:6px;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* Impression : fiche d'alerte uniquement */
+#printSheet{display:none}
+@media print{
+  body{background:#fff;color:#000}
+  .status,nav.tabs,main,body::before,.toast{display:none!important}
+  #printSheet{display:block;font-size:11pt}
+  #printSheet h1{font-size:16pt;margin-bottom:6pt}
+  #printSheet table{font-size:10pt}
+  #printSheet th,#printSheet td{border:1px solid #888}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="status" id="statusBar">
+  <div class="status-in">
+    <div class="brand-wrap"><img class="logo" id="logoImg" src="data:image/png;base64,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C8Tf+6JPvwZ/Jif8cDFIXD8I5dd0iLa0tGRiLAiFXFw2efLkFStWzJs3b9KkST6fDxGDwWB9ff3evXs3bdp05MgR86sHByMBHLFY7K677tq4caPArxyhrcheOx6Ov368NaHpKuvub0Ccq3ZH7a4d4c5OZGxw4BAemaVLl65bt+7cc8+dMmWKuRLa2tqOHz9+8ODBPXv2fPjhh7W1tWYFw1y7jbIGHCKRrDMebA53ykwa8iRBQI3rRa68Kk/xkOekgKRp+RWXz1r+l30bHLItd7oAJ7JJysGOukP++lkF1ZyIjcoZnrpJLrvsshtuuOGSSy4pKxsMvA4fPvzSSy/98Y9/3LFjBwCkEsDER41EFR/JsuuXfiaMlFdeeeWZZ57JBDXEMUtEF1100Z133vmZz3zG4/HAAGTN119//ZFHHnn99dfNNw7+aJIkbdmy5de//vXdd9+d3XyWXigJcDgYfeN4K+dc7l2YhzF26KOt3RycobD4O9/5zre+9a00VaKsrGzWrFkrVqwwB2Hz5s0vvfTSiy++eOzYMZM3PMpas3xynWOOBZojyZhjYNOjt51izCysUiUlk80psGNZ1fzGcMeW47udip0Tz90mJoPePrp9en4lG5UqHeYmueyyy775zW+uXLmyb+mNtIxySZJmzJjxta997Z577nnsscfuu+++jo4OcdoAwG233Zafn5+21AzDsNls77zzjqBaDbS7xCF87733zpw5U2SpZ459mqaVlJTMnDmzL+GdMZZIJO6///5MjneBLGVlZT/84Q9vuukm8/7TSviIkXE6nddcc80111zzzDPP3HvvvfX19UMCk3jjf//3f69fv97r9WZX6RBEaUliOztC7za2MyIprbkBYjyZbKs7nskg3Hrrrf/xH/8hSLGpbtFU3UoMwpo1a9asWfPAAw88++yzDz/88Pbt282WlOMXOMSo72urzZA+RQASY9PzK4dlChHR5TPPawl3HvM32TOAp5M+K2yyUtPZuLu15szSGblWOoQu6vF4fvjDH951111m4F0YC4MchsLUVxTljjvuOO+882KxmAkc1dXV99xzT7/vstvtIoNj8Lu6+eabFy1alPUmctu3bx8yc0RcsGTJkqeeekq0RBOjMdBQCHhFxOuuu+6cc85Zv3795s2bB8cOoXTU1dU98sgj9913X3aVDpHKuanJ/1FrQGHY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" alt="CPTS Artois Lys"><div class="brand"><b>Cellule SSE</b><span id="eventName">Aucun événement en cours</span></div></div>
+    <div class="level-chip" aria-live="polite">
+      <div class="code" id="chipCode">N0</div>
+      <div class="txt"><b id="chipLabel">Veille opérationnelle</b><span id="chipHint">Rien ne justifie de mobiliser</span></div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" aria-selected="true" data-view="alerte">Alerte en cours</button>
+    <button role="tab" aria-selected="false" data-view="carto">Cartographie des risques</button>
+    <button role="tab" aria-selected="false" data-view="annuaire">Annuaire</button>
+    <button role="tab" aria-selected="false" data-view="ressources">Ressources du territoire</button>
+    <button role="tab" aria-selected="false" data-view="reglages">Réglages</button>
+  </nav>
+</header>
+
+<main>
+<!-- =============== ALERTE =============== -->
+<section class="view" id="view-alerte">
+ <div class="grid-alert">
+  <div>
+   <div class="panel step">
+    <div class="num">1</div><h2>Réception du signal</h2>
+    <div class="body">
+     <p class="intro muted">Reprend la fiche réflexe 1 (annexe 9) et la fiche d’alerte (annexe 10). Notez le message tel qu’il a été reçu, puis rappelez l’émetteur pour le confirmer.</p>
+     <div class="fields">
+      <div class="field"><label for="f_date">Date et heure de réception</label><input type="datetime-local" id="f_date"></div>
+      <div class="field"><label for="f_recu">Reçu par</label><input type="text" id="f_recu" placeholder="Nom, prénom"></div>
+      <div class="field"><label for="f_canal">Canal</label>
+        <select id="f_canal"><option value="">—</option><option>Téléphone</option><option>Mail ssecptsartoislys</option><option>Mail contact@cptsartoislys.fr</option><option>MSSanté</option><option>DGS-Urgent / MARS</option><option>SMS / messagerie</option><option>Média / réseaux sociaux</option><option>Autre</option></select></div>
+      <div class="field"><label for="f_org">Émetteur (organisme)</label>
+        <select id="f_org"><option value="">—</option><option>ARS Hauts-de-France</option><option>Préfecture du Pas-de-Calais</option><option>Préfecture du Nord</option><option>SAMU</option><option>SDIS</option><option>CH Béthune</option><option>CH Armentières</option><option>CPAM</option><option>Mairie</option><option>Professionnel de santé du territoire</option><option>EHPAD / établissement médico-social</option><option>CPTS voisine</option><option>Santé publique France</option><option>Média</option><option>Autre</option></select></div>
+      <div class="field"><label for="f_corr">Correspondant (nom, fonction)</label><input type="text" id="f_corr"></div>
+      <div class="field"><label for="f_tel">Numéro pour le rappeler</label><input type="tel" id="f_tel"></div>
+      <div class="field wide"><label for="f_msg">Message exact</label><textarea id="f_msg" placeholder="Recopier le message mot pour mot"></textarea></div>
+      <div class="field wide">
+        <label class="check"><input type="checkbox" id="f_rappel"> <span>Alerte confirmée par rappel de l’émetteur <span class="hint">(fiche réflexe 1, action 2)</span></span></label>
+        <input type="text" id="f_rappel_h" placeholder="Heure du rappel et réponse obtenue">
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <div class="panel step">
+    <div class="num">2</div><h2>Nature de l’événement</h2>
+    <div class="body">
+     <div class="fields">
+      <div class="field wide"><label for="f_risk">Type de risque</label><select id="f_risk"></select></div>
+      <div class="field wide" id="riskCard"></div>
+      <div class="field wide"><label for="f_desc">Ce qui est connu à ce stade</label><textarea id="f_desc" placeholder="Faits vérifiés / non vérifiés, nombre de victimes ou de patients concernés, évolution attendue"></textarea></div>
+     </div>
+    </div>
+   </div>
+
+   <div class="panel step">
+    <div class="num">3</div><h2>Communes touchées</h2>
+    <div class="body">
+     <p class="intro muted">Cliquez sur la carte ou cochez la liste. Le découpage ouest / est reprend les deux zones du plan, chacune avec son référent.</p>
+     <div class="map-wrap" style="margin-top:.6rem">
+      <div><svg class="map" id="map" viewBox="0 0 580 440" role="group" aria-label="Carte schématique des 14 communes"></svg>
+        <div class="legend"><span><i style="border-color:var(--zone-o)"></i>Zone 1 · secteur ouest</span><span><i style="border-color:var(--zone-e)"></i>Zone 2 · secteur est</span><span>Taille du cercle = population</span></div>
+        <p class="hint">Position schématique, non cartographique.</p>
+      </div>
+      <div>
+        <div class="comlist" id="comList"></div>
+        <div class="btns"><button class="btn ghost" type="button" id="btnAllCom">Tout le territoire</button><button class="btn ghost" type="button" id="btnNoCom">Aucune</button></div>
+        <p id="popTouched" class="muted" style="margin-top:.6rem"></p>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <div class="panel step">
+    <div class="num">4</div><h2>Impact sur l’offre de soins</h2>
+    <div class="body">
+     <p class="intro muted">Ce sont ces critères qui déterminent le niveau. Seuls le DG de l’ARS, le préfet ou le ministre peuvent qualifier une situation sanitaire exceptionnelle ; la CPTS, elle, décide d’activer sa propre cellule.</p>
+     <div class="force" style="margin-top:.8rem">
+      <div class="checks">
+       <label class="check"><input type="checkbox" id="c_sse"> L’ARS ou le préfet a qualifié une SSE ou déclenché un volet ORSAN qui concerne le territoire</label>
+       <label class="check"><input type="checkbox" id="c_demande"> L’ARS demande explicitement à la CPTS de se mobiliser</label>
+       <label class="check"><input type="checkbox" id="c_planblanc"> Plan blanc ou mobilisation interne au CH de Béthune ou d’Armentières</label>
+      </div>
+     </div>
+     <div class="fields">
+      <fieldset class="field wide"><legend class="label">Vigilance en cours (Météo-France, Vigicrues, épidémie…)</legend>
+        <div class="seg" id="g_vig">
+         <label><input type="radio" name="vig" value="0" checked>Aucune</label><label><input type="radio" name="vig" value="1">Jaune</label><label><input type="radio" name="vig" value="2">Orange</label><label><input type="radio" name="vig" value="3">Rouge</label>
+        </div></fieldset>
+      <div class="field"><label for="c_psindispo">Professionnels de santé indisponibles <span class="hint" id="c_psindispo_v">0 %</span></label><input type="range" id="c_psindispo" min="0" max="60" step="5" value="0"></div>
+      <div class="field"><label for="c_struct">Structures d’exercice fermées <span class="hint">(MSP, cabinets)</span></label><input type="number" id="c_struct" min="0" max="20" value="0"></div>
+      <div class="field"><label for="c_pharma">Pharmacies fermées</label><input type="number" id="c_pharma" min="0" max="20" value="0"></div>
+      <fieldset class="field wide"><legend class="label">Afflux de demandes de soins non programmés</legend>
+        <div class="seg"><label><input type="radio" name="snp" value="0" checked>Normal</label><label><input type="radio" name="snp" value="1">En hausse, absorbé</label><label><input type="radio" name="snp" value="3">Dépasse nos capacités</label></div></fieldset>
+      <fieldset class="field wide"><legend class="label">Durée prévisible</legend>
+        <div class="seg"><label><input type="radio" name="duree" value="0" checked>Moins de 24 h</label><label><input type="radio" name="duree" value="1">1 à 3 jours</label><label><input type="radio" name="duree" value="2">Plus de 3 jours</label></div></fieldset>
+      <fieldset class="field"><legend class="label">Publics vulnérables concernés</legend>
+        <div class="checks" id="g_vuln">
+         <label class="check"><input type="checkbox" value="ehpad"> EHPAD, résidences seniors</label>
+         <label class="check"><input type="checkbox" value="domicile"> Patients dépendants à domicile (O2, dialyse, HAD, soins infirmiers)</label>
+         <label class="check"><input type="checkbox" value="enfants"> Crèches, écoles</label>
+         <label class="check"><input type="checkbox" value="precaires"> Personnes isolées ou précaires</label>
+        </div></fieldset>
+      <fieldset class="field"><legend class="label">Rupture de réseaux</legend>
+        <div class="checks" id="g_res">
+         <label class="check"><input type="checkbox" value="elec"> Électricité</label>
+         <label class="check"><input type="checkbox" value="eau"> Eau potable</label>
+         <label class="check"><input type="checkbox" value="telecom"> Téléphone / internet</label>
+         <label class="check"><input type="checkbox" value="routes"> Routes coupées, accès impossible</label>
+        </div></fieldset>
+      <fieldset class="field wide"><legend class="label">Besoins déjà identifiés</legend>
+        <div class="checks">
+         <label class="check"><input type="checkbox" id="c_penurie"> Tension sur les médicaments, l’oxygène ou les EPI</label>
+         <label class="check"><input type="checkbox" id="c_centre"> Ouvrir un centre dédié (vaccination, dépistage, consultations) — annexe 8</label>
+         <label class="check"><input type="checkbox" id="c_heberg"> Évacuation ou hébergement de population (centres CARE)</label>
+         <label class="check"><input type="checkbox" id="c_media"> Forte inquiétude de la population ou médiatisation</label>
+        </div></fieldset>
+     </div>
+    </div>
+   </div>
+
+   <div class="panel step">
+    <div class="num">5</div><h2>Main courante</h2>
+    <div class="body">
+     <p class="intro muted">Chaque information, décision ou action, avec son heure (annexe 13). Restez factuel.</p>
+     <div class="mc-row" style="margin-top:.6rem">
+       <input type="text" id="mc_h" aria-label="Heure" placeholder="Heure">
+       <input type="text" id="mc_src" aria-label="Source" placeholder="Source">
+       <input type="text" id="mc_info" aria-label="Information" placeholder="Information nouvelle">
+       <input type="text" id="mc_act" aria-label="Action" placeholder="Action associée">
+       <input type="text" id="mc_resp" aria-label="Responsable" placeholder="Responsable">
+       <button class="btn" type="button" id="mc_add" aria-label="Ajouter la ligne">+</button>
+     </div>
+     <div class="tbl-wrap" style="margin-top:.6rem"><table><thead><tr><th>N°</th><th>Heure</th><th>Source</th><th>Information</th><th>Action</th><th>Responsable</th><th></th></tr></thead><tbody id="mcBody"></tbody></table></div>
+     <div class="btns"><button class="btn ghost" type="button" id="btnStampDecision">Horodater le niveau actuel</button></div>
+    </div>
+   </div>
+  </div>
+
+  <aside class="decision" aria-label="Décision">
+   <div class="verdict" id="verdict"></div>
+   <div class="panel"><h3>À faire maintenant</h3><ul class="actions-list" id="todo"></ul></div>
+   <div class="panel"><h3>Qui contacter, dans quel ordre</h3><div id="contacts"></div></div>
+   <div class="panel">
+     <h3>Transmettre et garder une trace</h3>
+     <div class="btns">
+       <button class="btn primary" type="button" id="btnPrint">Imprimer la fiche d’alerte</button>
+       <button class="btn" type="button" id="btnMd">Copier la synthèse</button>
+       <button class="btn" type="button" id="btnIssue">Créer un ticket GitHub</button>
+       <button class="btn ghost" type="button" id="btnJson">Exporter (JSON)</button>
+       <label class="btn ghost" style="font-weight:400">Importer<input type="file" id="fileEvent" accept="application/json" hidden></label>
+       <button class="btn ghost" type="button" id="btnReset">Nouvelle alerte</button>
+     </div>
+     <p class="hint" style="margin-top:.6rem">Les données restent dans ce navigateur. Le ticket GitHub n’est confidentiel que si le dépôt est privé.</p>
+   </div>
+  </aside>
+ </div>
+</section>
+
+<!-- =============== CARTOGRAPHIE =============== -->
+<section class="view" id="view-carto" hidden>
+  <div class="panel">
+    <h2>Cartographie des risques du territoire</h2>
+    <p class="intro">Indice de risque IRi = fréquence (F1 à F4) × gravité (G1 à G4), selon la grille du guide régional ARS HDF. Les cotations proposées ici sont un point de départ : ajustez-les en cellule ou en conseil d’administration, elles sont enregistrées dans ce navigateur et peuvent être exportées.</p>
+    <div class="note">F1 : 1 à 7 jours par an · F2 : 8 à 30 jours · F3 : 31 à 120 jours · F4 : plus de 120 jours.<br>G1 : inconfort ou dommages mineurs · G2 : réversibles · G3 : séquelles · G4 : décès ou invalidité.</div>
+  </div>
+  <div class="panel"><h3>Filtrer les risques</h3>
+    <p class="hint">Les filtres s’appliquent à la matrice et au registre.</p>
+    <div class="filters">
+      <div class="field grow"><label for="fr_q">Rechercher</label><input type="search" id="fr_q" placeholder="ex. inondation, canicule, ORSAN…"></div>
+      <div class="field"><label for="fr_fam">Famille</label><select id="fr_fam"></select></div>
+      <div class="field"><label for="fr_lvl">Niveau de risque</label><select id="fr_lvl"><option value="">Tous</option><option value="lvl-tres">Très important</option><option value="lvl-important">Important</option><option value="lvl-secondaire">Secondaire</option><option value="lvl-mineur">Mineur</option></select></div>
+      <div class="field"><label for="fr_cin">Cinétique</label><select id="fr_cin"><option value="">Toutes</option><option value="lente">Lente</option><option value="rapide">Rapide</option></select></div>
+      <button class="btn ghost" type="button" id="fr_reset">Effacer les filtres</button>
+      <span class="count" id="fr_count" aria-live="polite"></span>
+    </div>
+  </div>
+  <div class="panel"><h3>Matrice fréquence × gravité</h3><p class="hint">Cliquez sur un risque pour le préremplir dans l’onglet Alerte.</p><div class="matrix" id="matrix" style="margin-top:.6rem"></div></div>
+  <div class="panel"><h3>Registre des risques</h3>
+    <div class="tbl-wrap" style="margin-top:.6rem"><table><thead><tr><th>Risque</th><th>Volet ORSAN</th><th>Cinétique</th><th>F</th><th>G</th><th>IRi</th><th>Niveau</th><th>Où surveiller</th></tr></thead><tbody id="riskTable"></tbody></table></div>
+    <div class="btns"><button class="btn ghost" type="button" id="btnRiskReset">Revenir aux cotations proposées</button><button class="btn ghost" type="button" id="btnRiskCsv">Exporter le registre (CSV)</button></div>
+  </div>
+  <div class="panel">
+    <h3>Exposition par commune · Géorisques</h3>
+    <p class="intro muted">Les risques réglementaires de chaque commune viennent de la base GASPAR, via l’API Géorisques. Les installations classées (dont Seveso) et le nombre d’arrêtés de catastrophe naturelle sont interrogés en même temps.</p>
+    <div class="btns"><button class="btn primary" type="button" id="btnGeoAll">Interroger Géorisques pour les 14 communes</button><span class="muted" id="geoStatus" style="align-self:center"></span></div>
+    <div class="tbl-wrap" style="margin-top:.8rem"><table><thead><tr><th>Commune</th><th>Zone</th><th>Habitants</th><th>Risques GASPAR</th><th>ICPE / Seveso</th><th>Arrêtés CatNat</th><th></th></tr></thead><tbody id="geoTable"></tbody></table></div>
+  </div>
+</section>
+
+<!-- =============== ANNUAIRE =============== -->
+<section class="view" id="view-annuaire" hidden>
+  <div class="panel">
+    <h2>Annuaire de crise</h2>
+    <p class="intro">Ce fichier est publié sur GitHub Pages : il ne contient volontairement aucune coordonnée personnelle. Chaque membre de la cellule importe une fois l’annuaire nominatif (fichier JSON transmis par mail sécurisé) ; il reste ensuite dans son navigateur.</p>
+    <div class="btns">
+      <label class="btn primary">Importer l’annuaire (JSON)<input type="file" id="fileAnnuaire" accept="application/json" hidden></label>
+      <button class="btn" type="button" id="btnAnnExport">Exporter l’annuaire</button>
+      <button class="btn ghost" type="button" id="btnAnnClear">Effacer les coordonnées de ce navigateur</button>
+    </div>
+    <p class="muted" id="annStatus" style="margin-top:.5rem"></p>
+    <div class="filters">
+      <div class="field grow"><label for="fa_q">Rechercher une fonction ou un nom</label><input type="search" id="fa_q" placeholder="ex. pilote, mairie, pharmacie…"></div>
+      <div class="field"><label for="fa_g">Catégorie</label><select id="fa_g"></select></div>
+      <div class="field"><label for="fa_s">Coordonnées</label><select id="fa_s"><option value="">Toutes les fonctions</option><option value="ok">Renseignées</option><option value="todo">À compléter</option></select></div>
+      <button class="btn ghost" type="button" id="fa_reset">Effacer les filtres</button>
+      <span class="count" id="fa_count" aria-live="polite"></span>
+    </div>
+  </div>
+  <div id="annGroups"></div>
+</section>
+
+<!-- =============== RESSOURCES =============== -->
+<section class="view" id="view-ressources" hidden>
+  <div class="panel"><h2>Filtrer par territoire</h2>
+    <p class="hint">S’applique aux lieux d’accueil et aux moyens communaux.</p>
+    <div class="filters">
+      <div class="field"><label for="fx_zone">Zone</label><select id="fx_zone"><option value="">Tout le territoire</option><option value="o">Zone 1 · secteur ouest</option><option value="e">Zone 2 · secteur est</option></select></div>
+      <div class="field"><label for="fx_com">Commune</label><select id="fx_com"></select></div>
+      <fieldset class="field grow"><legend class="label">Lieux d’accueil équipés de</legend>
+        <div class="checks inline" id="fx_eq">
+          <label class="check"><input type="checkbox" value="4"> Sanitaires</label>
+          <label class="check"><input type="checkbox" value="5"> Douches</label>
+          <label class="check"><input type="checkbox" value="6"> Cuisson</label>
+          <label class="check"><input type="checkbox" value="7"> Froid</label>
+        </div></fieldset>
+      <label class="check" style="flex:1 1 14rem"><input type="checkbox" id="fx_alert"> Seulement les communes cochées dans l’alerte en cours</label>
+      <button class="btn ghost" type="button" id="fx_reset">Effacer les filtres</button>
+      <span class="count" id="fx_count" aria-live="polite"></span>
+    </div>
+  </div>
+  <div class="cols2">
+    <div class="panel"><h2>Offre de soins de proximité</h2><p class="hint">Plan SSE CPTS Artois Lys, mai 2023. Croiser avec Rezone et Cartosanté pour l’effectif à jour.</p><div id="resSoins"></div></div>
+    <div class="panel"><h2>Sources de veille</h2><p class="hint">À consulter en veille renforcée et à chaque point de situation.</p><div id="resVeille"></div></div>
+  </div>
+  <div class="panel"><h2>Lieux d’accueil et de regroupement (CARE)</h2><p class="hint">Recensement CABBALR. Les communes de la CC Flandre Lys (Laventie, Fleurbaix, Sailly-sur-la-Lys) et Lestrem ne figurent pas dans ce fichier : à compléter avec les mairies (annexe 3).</p><div class="tbl-wrap"><table><thead><tr><th>Commune</th><th>Lieu</th><th>Adresse</th><th>Places</th><th>Sanitaires</th><th>Douches</th><th>Cuisson</th><th>Froid</th></tr></thead><tbody id="careTable"></tbody></table></div></div>
+  <div class="panel"><h2>Moyens communaux mobilisables</h2><div class="tbl-wrap"><table><thead><tr><th>Commune</th><th>Personnel communal</th><th>Professionnels de santé recensés</th><th>Matériel utile</th><th>Locaux sensibles</th></tr></thead><tbody id="moyensTable"></tbody></table></div></div>
+</section>
+
+<!-- =============== RÉGLAGES =============== -->
+<section class="view" id="view-reglages" hidden>
+  <div class="panel">
+    <h2>Seuils de décision</h2>
+    <p class="intro">Le niveau est la somme des points des critères cochés dans l’onglet Alerte. Ces seuils sont une proposition : faites-les valider par le bureau, puis testez-les lors d’un exercice (annexe 7).</p>
+    <div class="fields">
+      <div class="field"><label for="s_n1">Veille renforcée à partir de</label><input type="number" id="s_n1" min="1" max="20"></div>
+      <div class="field"><label for="s_n2">Pré-alerte à partir de</label><input type="number" id="s_n2" min="1" max="30"></div>
+      <div class="field"><label for="s_n3">Activation de la cellule à partir de</label><input type="number" id="s_n3" min="1" max="40"></div>
+    </div>
+    <div class="tbl-wrap" style="margin-top:1rem"><table><thead><tr><th>Critère</th><th>Points</th></tr></thead><tbody id="pointsTable"></tbody></table></div>
+  </div>
+  <div class="panel">
+    <h2>Dépôt GitHub pour les tickets</h2>
+    <p class="intro">Détecté automatiquement si la page est servie par GitHub Pages. Sinon, renseignez-le.</p>
+    <div class="fields">
+      <div class="field"><label for="s_owner">Propriétaire (compte ou organisation)</label><input type="text" id="s_owner" placeholder="cpts-artois-lys"></div>
+      <div class="field"><label for="s_repo">Dépôt</label><input type="text" id="s_repo" placeholder="cellule-sse"></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>Affichage</h2>
+    <div class="seg"><label><input type="radio" name="theme" value="auto" checked>Système</label><label><input type="radio" name="theme" value="light">Clair</label><label><input type="radio" name="theme" value="dark">Sombre</label></div>
+  </div>
+</section>
+</main>
+
+<div id="printSheet"></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+/* =====================================================================
+   DONNÉES — modifiables sans toucher au reste du code
+   Sources : Plan SSE CPTS Artois Lys (mai 2023), annexes 1 à 15,
+   recensement CABBALR, guide régional ARS HDF (27/06/2023).
+   Aucune coordonnée personnelle ici : elles sont importées localement
+   depuis l'onglet Annuaire.
+   ===================================================================== */
+
+const CPTS = {
+  nom: "CPTS Artois Lys",
+  adresse: "22 rue du 11 novembre, 62840 Laventie",
+  tel: "06 80 42 91 43",
+  mail: "contact@cptsartoislys.fr",
+  mailSSE: "ssecptsartoislys@gmail.com",
+  site: "https://www.cptsartoislys.fr/"
+};
+
+/* zone : o = zone 1 secteur ouest (réf. Dr Caron), e = zone 2 secteur est (réf. Dr Vandecandelaere) */
+const COMMUNES = [
+  {insee:"62195", nom:"Calonne-sur-la-Lys", pop:1545, zone:"o", zac:true,  epci:"CABBALR", lat:50.6243, lon:2.6170},
+  {insee:"62584", nom:"Mont-Bernanchon",    pop:1359, zone:"o", zac:true,  epci:"CABBALR", lat:50.5860, lon:2.6290},
+  {insee:"62454", nom:"Hinges",             pop:2452, zone:"o", zac:false, epci:"CABBALR", lat:50.5670, lon:2.6200},
+  {insee:"62520", nom:"Locon",              pop:2465, zone:"o", zac:false, epci:"CABBALR", lat:50.5710, lon:2.6660},
+  {insee:"62502", nom:"Lestrem",            pop:4532, zone:"o", zac:true,  epci:"à confirmer", lat:50.6200, lon:2.6840, msp:"msp_lestrem"},
+  {insee:"62851", nom:"Vieille-Chapelle",   pop:778,  zone:"o", zac:false, epci:"CABBALR", lat:50.5980, lon:2.7120},
+  {insee:"62252", nom:"La Couture",         pop:2764, zone:"o", zac:false, epci:"CABBALR", lat:50.5780, lon:2.7110},
+  {insee:"62706", nom:"Richebourg",         pop:2622, zone:"e", zac:false, epci:"CABBALR", lat:50.5790, lon:2.7450, msp:"mm_richebourg"},
+  {insee:"62330", nom:"Festubert",          pop:1313, zone:"e", zac:false, epci:"CABBALR", lat:50.5440, lon:2.7380},
+  {insee:"62606", nom:"Neuve-Chapelle",     pop:1440, zone:"e", zac:false, epci:"CABBALR", lat:50.5850, lon:2.7790},
+  {insee:"62529", nom:"Lorgies",            pop:1586, zone:"e", zac:false, epci:"CABBALR", lat:50.5690, lon:2.7920},
+  {insee:"62491", nom:"Laventie",           pop:4994, zone:"e", zac:false, epci:"CC Flandre Lys", lat:50.6290, lon:2.7740, msp:"msp_alloeu"},
+  {insee:"62736", nom:"Sailly-sur-la-Lys",  pop:3982, zone:"e", zac:false, epci:"CC Flandre Lys", lat:50.6560, lon:2.7690, msp:"msp_sailly"},
+  {insee:"62338", nom:"Fleurbaix",          pop:2732, zone:"e", zac:false, epci:"CC Flandre Lys", lat:50.6510, lon:2.8320, msp:"msp_fleurbaix"}
+];
+
+const MAP_EXT = [
+  {nom:"Merville", lat:50.6430, lon:2.6410},
+  {nom:"Estaires", lat:50.6460, lon:2.7220}
+];
+/* position de l'étiquette sur la carte : r droite, l gauche, t dessus, b dessous */
+const LABEL_POS = {"Calonne-sur-la-Lys":"t","Mont-Bernanchon":"t","Hinges":"l","Locon":"b","Lestrem":"r","Vieille-Chapelle":"r","La Couture":"b","Richebourg":"t","Festubert":"r","Neuve-Chapelle":"r","Lorgies":"r","Laventie":"r","Sailly-sur-la-Lys":"t","Fleurbaix":"b"};
+const RIVERS = {
+  lys:  [[50.621,2.553],[50.634,2.600],[50.643,2.641],[50.648,2.690],[50.649,2.718],[50.657,2.748],[50.664,2.772],[50.670,2.805],[50.676,2.840],[50.690,2.878]],
+  lawe: [[50.528,2.650],[50.548,2.668],[50.566,2.684],[50.590,2.699],[50.612,2.700],[50.632,2.706],[50.646,2.712]]
+};
+
+/* Niveaux de risque IRi (guide régional : 1 à 16) */
+function iriLevel(v){
+  if (v>=12) return {cls:"lvl-tres", txt:"Très important"};
+  if (v>=8)  return {cls:"lvl-important", txt:"Important"};
+  if (v>=4)  return {cls:"lvl-secondaire", txt:"Secondaire"};
+  return {cls:"lvl-mineur", txt:"Mineur"};
+}
+
+const VEILLE = {
+  vigicrues: {t:"Vigicrues (Lys, Lawe)", u:"https://www.vigicrues.gouv.fr/"},
+  meteo:     {t:"Vigilance Météo-France", u:"https://vigilance.meteofrance.fr/fr"},
+  atmo:      {t:"Atmo Hauts-de-France (qualité de l’air)", u:"https://www.atmo-hdf.fr/"},
+  pollens:   {t:"RNSA – pollens", u:"https://www.pollens.fr/"},
+  spf:       {t:"Santé publique France – Hauts-de-France", u:"https://www.santepubliquefrance.fr/regions/hauts-de-france"},
+  dgs:       {t:"DGS-Urgent (s’abonner)", u:"https://dgs-urgent.sante.gouv.fr/"},
+  ars:       {t:"ARS Hauts-de-France", u:"https://www.hauts-de-france.ars.sante.fr/"},
+  pref62:    {t:"Préfecture du Pas-de-Calais", u:"https://www.pas-de-calais.gouv.fr/"},
+  pref59:    {t:"Préfecture du Nord", u:"https://www.nord.gouv.fr/"},
+  georisques:{t:"Géorisques", u:"https://www.georisques.gouv.fr/"},
+  ansm:      {t:"ANSM – disponibilité des produits de santé", u:"https://ansm.sante.fr/disponibilites-des-produits-de-sante"},
+  cyber:     {t:"CERT Santé – cyberveille", u:"https://www.cyberveille-sante.gouv.fr/"},
+  enedis:    {t:"Enedis – pannes et interruptions", u:"https://www.enedis.fr/"},
+  fralert:   {t:"FR-Alert", u:"https://fr-alert.gouv.fr/"},
+  renfort:   {t:"Plateforme Renfort RH crise", u:"https://renfortrh.solidarites-sante.gouv.fr/"},
+  reserve:   {t:"Réserve sanitaire", u:"https://www.santepubliquefrance.fr/a-propos/nos-principes-fondateurs/reserve-sanitaire"},
+  rezone:    {t:"Rezone CPTS (Assurance Maladie)", u:"https://rezone.ameli.fr/"},
+  cartosante:{t:"Cartosanté (ARS)", u:"https://cartosante.atlasante.fr/"}
+};
+
+/* Catalogue des risques.
+   F/G : cotation proposée, à valider. orsan : volet de réponse.
+   cin : cinétique. veille : clés de VEILLE. roles : rôles de l'annuaire à ajouter
+   au-delà de la chaîne standard. gaspar : libellés Géorisques rattachés. */
+const RISKS = [
+  {id:"epi_saison", nom:"Épidémie saisonnière (grippe, bronchiolite, Covid, gastro-entérite)", fam:"Sanitaire", orsan:"EPI-CLIM / REB", cin:"lente", F:4, G:2,
+   veille:["spf","dgs","ars"], roles:["pharmacies","ehpad"],
+   actions:["Ouvrir des créneaux de soins non programmés dans les MSP et cabinets","Relayer les consignes DGS et les campagnes de vaccination","Suivre les tensions sur les antiviraux, tests et EPI avec les pharmacies"]},
+  {id:"reb", nom:"Maladie infectieuse émergente ou cas groupés (rougeole, mpox, arbovirose…)", fam:"Sanitaire", orsan:"REB", cin:"lente", F:1, G:4,
+   veille:["spf","dgs","ars"], roles:["ars_dd","pharmacies"],
+   actions:["Diffuser la conduite à tenir (repérage, isolement, signalement à l’ARS)","Préparer un centre de vaccination ou de dépistage (annexe 8)","Centraliser les besoins en tests, vaccins et EPI"]},
+  {id:"canicule", nom:"Canicule", fam:"Climatique", orsan:"EPI-CLIM", cin:"lente", F:2, G:3,
+   veille:["meteo","ars"], roles:["mairies","ehpad","ccas"],
+   actions:["Croiser les patientèles fragiles avec les registres canicule des CCAS","Organiser des appels ou passages chez les patients isolés","Ouvrir les cabinets comme îlots de fraîcheur si possible"]},
+  {id:"froid", nom:"Grand froid, neige, verglas", fam:"Climatique", orsan:"EPI-CLIM", cin:"lente", F:2, G:2,
+   veille:["meteo","pref62"], roles:["mairies","ccas"],
+   actions:["Prioriser les tournées infirmières et soins à domicile","Signaler aux mairies les patients isolés sans chauffage"]},
+  {id:"pollution", nom:"Pic de pollution de l’air, pollens", fam:"Environnemental", orsan:"EPI-CLIM", cin:"lente", F:3, G:1,
+   veille:["atmo","pollens"], roles:[],
+   actions:["Relayer les recommandations aux patients asthmatiques et BPCO"]},
+  {id:"inondation", nom:"Inondation (débordement de la Lys ou de la Lawe, remontée de nappe)", fam:"Naturel", orsan:"AMAVI / continuité des soins", cin:"lente à rapide", F:2, G:3,
+   veille:["vigicrues","meteo","pref62","georisques"], roles:["mairies","sdis","epci"],
+   gaspar:["inondation","nappe","crue","submersion"],
+   actions:["Repérer les patients dépendants dans les zones inondables (O2, dialyse, insuline, soins quotidiens)","Organiser la continuité des soins si un cabinet ou une pharmacie est inaccessible","Prévoir l’accueil sanitaire dans les centres CARE"]},
+  {id:"tempete", nom:"Tempête, orages violents", fam:"Naturel", orsan:"AMAVI / continuité des soins", cin:"rapide", F:2, G:2,
+   veille:["meteo","enedis","pref62"], roles:["mairies"],
+   gaspar:["tempête","tempete","atmosph","grêle","neige","vent"],
+   actions:["Vérifier l’autonomie électrique des patients sous assistance","Recenser les structures fermées et réorienter les patients"]},
+  {id:"terrain", nom:"Mouvement de terrain, retrait-gonflement des argiles, séisme", fam:"Naturel", orsan:"AMAVI", cin:"rapide", F:1, G:2,
+   veille:["georisques","pref62"], roles:["mairies","sdis"],
+   gaspar:["mouvement","argile","séisme","seisme","cavit","effondrement"],
+   actions:["Vérifier l’intégrité des locaux de soins concernés"]},
+  {id:"industriel", nom:"Accident industriel (installation classée, Seveso)", fam:"Technologique", orsan:"NRC / AMAVI", cin:"rapide", F:1, G:4,
+   veille:["georisques","pref62","fralert"], roles:["prefecture","sdis","mairies"],
+   gaspar:["industriel","seveso"],
+   actions:["Relayer les consignes de mise à l’abri de la préfecture","Préparer la prise en charge en ville des personnes exposées non graves","Orienter les cas graves vers le 15, sans les recevoir au cabinet"]},
+  {id:"tmd", nom:"Accident de transport de matières dangereuses (route, canal, canalisation)", fam:"Technologique", orsan:"NRC / AMAVI", cin:"rapide", F:1, G:3,
+   veille:["georisques","pref62","fralert"], roles:["prefecture","sdis","mairies"],
+   gaspar:["transport de marchandises","matières dangereuses","tmd","canalisation"],
+   actions:["Relayer les consignes de confinement","Ne pas accueillir de victime potentiellement contaminée au cabinet : appel au 15"]},
+  {id:"nrc", nom:"Accident nucléaire, radiologique ou chimique", fam:"Technologique", orsan:"NRC", cin:"rapide", F:1, G:4,
+   veille:["pref62","pref59","fralert","ars"], roles:["prefecture","pharmacies"],
+   gaspar:["nucléaire","nucleaire","radiolog"],
+   actions:["Relayer les consignes officielles, éviter toute initiative de distribution de comprimés d’iode sans ordre préfectoral","Coordonner pharmacies et médecins sur les demandes de la population"]},
+  {id:"munitions", nom:"Découverte d’engins de guerre (munitions 1914-1918)", fam:"Technologique", orsan:"AMAVI", cin:"rapide", F:2, G:2,
+   veille:["pref62"], roles:["mairies","prefecture"],
+   gaspar:["engins de guerre","munitions"],
+   actions:["En cas d’évacuation, assurer la continuité des soins des patients déplacés"]},
+  {id:"amavi", nom:"Afflux massif de victimes (attentat, accident grave, rassemblement)", fam:"Sécuritaire", orsan:"AMAVI / MÉDICO-PSY", cin:"rapide", F:1, G:4,
+   veille:["pref62","ars"], roles:["prefecture","ch_bethune","ch_armentieres","psy"],
+   actions:["Libérer des créneaux de soins non programmés pour désengorger les urgences","Mobiliser psychologues et psychiatres du territoire (soutien médico-psychologique)","Ne pas s’auto-déployer sur les lieux : se mettre à disposition du SAMU"]},
+  {id:"reseaux", nom:"Coupure prolongée d’électricité, d’eau potable ou de télécoms", fam:"Infrastructures", orsan:"continuité des soins", cin:"rapide", F:2, G:2,
+   veille:["enedis","pref62"], roles:["mairies","epci"],
+   actions:["Lister les patients électrodépendants et vérifier qu’ils sont connus d’Enedis comme prioritaires","Prévoir un mode dégradé : annuaire papier, rendez-vous sans logiciel"]},
+  {id:"cyber", nom:"Cyberattaque (logiciels métier, messagerie, hôpital)", fam:"Infrastructures", orsan:"continuité des soins", cin:"rapide", F:2, G:2,
+   veille:["cyber"], roles:["ars_dd"],
+   actions:["Passer en mode dégradé (papier, téléphone)","Signaler l’incident (ARS, CERT Santé)","Prévenir les patients si les rendez-vous en ligne sont indisponibles"]},
+  {id:"penurie", nom:"Pénurie de produits de santé ou d’EPI", fam:"Sanitaire", orsan:"continuité des soins", cin:"lente", F:2, G:2,
+   veille:["ansm","dgs"], roles:["pharmacies","stocks"],
+   actions:["Faire l’état des stocks (annexe 4) et organiser la répartition","Relayer les alternatives thérapeutiques recommandées"]},
+  {id:"epizootie", nom:"Épizootie, zoonose (influenza aviaire, élevages)", fam:"Sanitaire", orsan:"REB", cin:"lente", F:2, G:2,
+   veille:["ars","pref62"], roles:["ars_dd"],
+   actions:["Relayer la conduite à tenir pour les éleveurs et personnes exposées"]},
+  {id:"autre", nom:"Autre événement", fam:"Autre", orsan:"à déterminer", cin:"à préciser", F:1, G:1,
+   veille:["ars","pref62"], roles:[], actions:["Qualifier l’événement avec l’émetteur et l’ARS"]}
+];
+
+/* Rôles de l'annuaire. defaut : uniquement des coordonnées institutionnelles publiques.
+   Les noms et coordonnées personnelles sont importés dans l'onglet Annuaire. */
+const ROLE_GROUPS = [
+  {g:"Cellule de crise CPTS", roles:[
+    {id:"ref_sse", label:"Réception de l’alerte (veille SSE)", def:{tel:CPTS.tel, mail:CPTS.mailSSE}},
+    {id:"pilote", label:"Pilote de la cellule"},
+    {id:"pilote_s", label:"Pilote – suppléant"},
+    {id:"communication", label:"Référent communication", def:{mail:CPTS.mail}},
+    {id:"medical", label:"Référent médical"},
+    {id:"medical_s", label:"Référent médical – suppléant"},
+    {id:"logistique", label:"Référent logistique"},
+    {id:"logistique_s", label:"Référent logistique – suppléant"},
+    {id:"stocks", label:"Référent stocks"},
+    {id:"stocks_s", label:"Référent stocks – suppléant"},
+    {id:"evaluation", label:"Référent évaluation (main courante, RETEX)"},
+    {id:"zone_o", label:"Référent zone 1 · secteur ouest"},
+    {id:"zone_o_s", label:"Référent zone 1 – suppléant"},
+    {id:"zone_e", label:"Référent zone 2 · secteur est"},
+    {id:"zone_e_s", label:"Référent zone 2 – suppléant"}
+  ]},
+  {g:"Structures d’exercice coordonné", roles:[
+    {id:"msp_alloeu", label:"MSP de l’Alloeu (Laventie)"},
+    {id:"msp_fleurbaix", label:"MSP de Fleurbaix"},
+    {id:"msp_sailly", label:"MSP de Sailly-sur-la-Lys"},
+    {id:"msp_lestrem", label:"MSP de Lestrem"},
+    {id:"mm_richebourg", label:"Cabinet médical de Richebourg"},
+    {id:"pharmacies", label:"Pharmacies du territoire (liste de diffusion)"},
+    {id:"psy", label:"Psychologues et psychiatres du territoire"},
+    {id:"ehpad", label:"EHPAD du territoire (Lestrem, La Couture, St Jean…)"},
+    {id:"membres", label:"Ensemble des membres de la CPTS (liste de diffusion)"}
+  ]},
+  {g:"Autorités et partenaires", roles:[
+    {id:"ars_pfr", label:"ARS HDF – point focal régional (signalements)", def:{tel:"03 62 72 77 77", mail:"ars-hdf-signal@ars.sante.fr"}},
+    {id:"ars_dd", label:"ARS – délégation du Pas-de-Calais (référent CPTS)"},
+    {id:"cpam", label:"CPAM de l’Artois (référent CPTS)"},
+    {id:"ch_bethune", label:"Centre hospitalier de Béthune"},
+    {id:"ch_armentieres", label:"Centre hospitalier d’Armentières"},
+    {id:"samu", label:"SAMU", def:{tel:"15", tel2:"112"}},
+    {id:"sdis", label:"Sapeurs-pompiers (SDIS 62)", def:{tel:"18", tel2:"112"}},
+    {id:"prefecture", label:"Préfecture du Pas-de-Calais (SIDPC)"},
+    {id:"epci", label:"Intercommunalités (CABBALR, CC Flandre Lys)"},
+    {id:"ccas", label:"CCAS des communes (registres canicule et grand froid)"},
+    {id:"cpts_voisines", label:"CPTS voisines (Béthunois, Collines d’Artois…)"}
+  ]},
+  {g:"Mairies", roles: COMMUNES.map(c=>({id:"mairie_"+c.insee, label:"Mairie de "+c.nom}))}
+];
+
+/* Barème de décision. Modifiable dans l'onglet Réglages (sauf la structure). */
+const DEFAULT_SEUILS = {n1:1, n2:4, n3:7};
+const BAREME = [
+  {id:"vig1", label:"Vigilance jaune", pts:1},
+  {id:"vig2", label:"Vigilance orange", pts:2},
+  {id:"vig3", label:"Vigilance rouge", pts:4},
+  {id:"ps10", label:"10 à 19 % des professionnels indisponibles", pts:1},
+  {id:"ps20", label:"20 à 34 % des professionnels indisponibles", pts:3},
+  {id:"ps35", label:"35 % ou plus des professionnels indisponibles", pts:5},
+  {id:"struct1", label:"Une structure d’exercice fermée", pts:1},
+  {id:"struct2", label:"Deux structures ou plus fermées", pts:3},
+  {id:"pharma1", label:"Une pharmacie fermée", pts:1},
+  {id:"pharma2", label:"Deux pharmacies ou plus fermées", pts:3},
+  {id:"snp1", label:"Soins non programmés en hausse, absorbés", pts:1},
+  {id:"snp3", label:"Soins non programmés au-delà des capacités", pts:4},
+  {id:"com2", label:"2 à 4 communes touchées", pts:1},
+  {id:"com5", label:"5 communes ou plus touchées", pts:2},
+  {id:"vuln", label:"Par type de public vulnérable concerné (2 au plus)", pts:1},
+  {id:"res", label:"Par réseau coupé (2 au plus)", pts:1},
+  {id:"penurie", label:"Tension sur les produits de santé ou EPI", pts:2},
+  {id:"duree1", label:"Durée prévisible de 1 à 3 jours", pts:1},
+  {id:"duree2", label:"Durée prévisible de plus de 3 jours", pts:2},
+  {id:"media", label:"Inquiétude ou médiatisation", pts:1},
+  {id:"iri", label:"Risque coté important ou très important (IRi ≥ 8)", pts:1},
+  {id:"centre", label:"Besoin d’un centre dédié", pts:3},
+  {id:"heberg", label:"Évacuation ou hébergement de population", pts:3}
+];
+
+const LEVELS = [
+  {code:"N0", nom:"Veille opérationnelle", hint:"Rien ne justifie de mobiliser", v:"--n0"},
+  {code:"N1", nom:"Veille renforcée", hint:"Surveiller et prévenir le pilote", v:"--n1"},
+  {code:"N2", nom:"Pré-alerte", hint:"Le pilote décide de l’activation sous 24 h", v:"--n2"},
+  {code:"N3", nom:"Cellule de crise activée", hint:"Gradation 1 : mobilisation des structures", v:"--n3"},
+  {code:"N4", nom:"Cellule activée · gradation 2", hint:"Ouverture d’une structure dédiée", v:"--n4"}
+];
+</script>
+<script>
+/* Données de recensement CABBALR (communes Artois Lys) */
+const CARE = [
+ ["Calonne-sur-la-Lys","Salle les Saules","80 rue du Bois",null,"","","Oui","Oui"],
+ ["Calonne-sur-la-Lys","Salle annexe","rue du Bois",null,"","","",""],
+ ["Calonne-sur-la-Lys","Salle omnisports","rue du Bois",null,"","","",""],
+ ["Festubert","Salle des fêtes","186 rue de Béthune",380,"Oui","","Oui","Oui"],
+ ["Festubert","Salle de sport","rue de Béthune",500,"","Oui","","Oui"],
+ ["Hinges","Salle des sports","226 rue du 8 Mai (cour de la mairie)",null,"Oui","Oui","",""],
+ ["Hinges","Salle des Acacias","place de l’Église",null,"Oui","Oui","Oui",""],
+ ["Hinges","Salle de l’Amitié","205 rue des Fusillés",null,"Oui","","Oui",""],
+ ["Hinges","Salle de CAC","197 rue des Fusillés",null,"Oui","","",""],
+ ["Hinges","Salle Queste","61 rue de Béthune",null,"Oui","","",""],
+ ["Hinges","Restaurant scolaire","",80,"Oui","","Oui",""],
+ ["La Couture","École maternelle","186 rue Bento Roma",80,"","","",""],
+ ["La Couture","École élémentaire","274 rue Bento Roma",100,"","","",""],
+ ["La Couture","Salle des fêtes","rue du Rietz",300,"","","",""],
+ ["La Couture","Salle polyvalente","rue du Rietz",450,"","","",""],
+ ["La Couture","Dojo","rue Bento Roma",100,"","","",""],
+ ["La Couture","Salle de ping-pong","rue Bento Roma",100,"","","",""],
+ ["Locon","Salle de sports","rue Victor Genel",null,"Oui","Oui","Non","Non"],
+ ["Locon","Restaurant scolaire","179 rue Victor Genel",null,"Oui","Non","Oui","Oui"],
+ ["Locon","Salle des fêtes","rue de l’Égalité",null,"Oui","Non","Oui","Oui"],
+ ["Lorgies","Salle des fêtes","rue du Biez",null,"","","",""],
+ ["Mont-Bernanchon","Salle Les Coquelicots","483 rue de la Place",25,"","","",""],
+ ["Mont-Bernanchon","Salle Les Libellules","200 rue des Écoles",100,"","","",""],
+ ["Mont-Bernanchon","Salle Les Tournesols + salle de danse","235 rue des Écoles",30,"","","",""],
+ ["Mont-Bernanchon","Écolodges (CABBALR)","rue des Écoles",8,"","","",""],
+ ["Mont-Bernanchon","Géotopia (CABBALR)","rue des Écoles",12,"","","",""],
+ ["Neuve-Chapelle","Salle communale","75 rue de la Vieille Bombe",100,"","","",""],
+ ["Neuve-Chapelle","Salle des Cytises","85 rue de la Vieille Bombe",50,"","","",""],
+ ["Richebourg","Salle Dekeuwer","9 rue de la Briqueterie",700,"","","",""],
+ ["Richebourg","Salle Philippe Helle","rue de la Briqueterie",null,"","","",""],
+ ["Richebourg","Salle Legry","7 rue de la Briqueterie",60,"","","",""],
+ ["Richebourg","Groupe scolaire Marcel Lejosne","allée de Worthing",300,"","","",""],
+ ["Vieille-Chapelle","Salle Espace Avenir","place de l’Église",80,"","","",""],
+ ["Vieille-Chapelle","Foyer communal","rue du Capitaine Wodley",35,"Oui","","Oui","Oui"],
+ ["Vieille-Chapelle","Pôle maternel et école primaire","place de la Mairie",40,"Oui","","",""],
+ ["Vieille-Chapelle","Salle d’honneur de la mairie","103 rue de la Place",20,"Oui","","",""]
+];
+const MOYENS = {
+ "Calonne-sur-la-Lys":{pc:40, ps:"17 médecins, 5 pharmaciens, 2 ambulances (hors commune)", mat:"pompe thermique, groupe électrogène, tracteur-benne, utilitaire", loc:"garderie, 2 écoles"},
+ "Festubert":{pc:28, ps:"2 infirmiers, 1 pharmacien (Cuinchy)", mat:"10 barrières, 10 panneaux, cuve à eau 1000 L, tronçonneuses, véhicule léger", loc:"2 écoles, garderie"},
+ "Hinges":{pc:57, ps:"3 médecins, 5 infirmiers, 4 kinés, 1 pharmacien ; 4 locuteurs de langues étrangères", mat:"groupe électrogène, moto-pompe, tonne à eau, ~100 barrières, lame à neige", loc:"restaurant scolaire, 2 écoles"},
+ "La Couture":{pc:38, ps:"2 médecins, 7 infirmiers, 2 dentistes, 2 kinés, 1 pharmacien…", mat:"groupe électrogène, camionnette, utilitaire", loc:"EHPAD, micro-crèche, 2 écoles, cantine, PCC"},
+ "Locon":{pc:31, ps:"2 médecins, 4 infirmiers, 2 pharmaciens, 1 dentiste, 1 kiné", mat:"2 groupes électrogènes, pompe, 30 barrières, mégaphone, EPI, absorbants", loc:"résidence seniors, 2 écoles, PCC"},
+ "Mont-Bernanchon":{pc:18, ps:"1 médecin, 6 infirmiers, 1 psychiatre ; 1 sapeur-pompier volontaire", mat:"groupe électrogène, pompes vide-cave et de surface, grue, projecteur", loc:"petite enfance, école, périscolaire, PCC"},
+ "Richebourg":{pc:43, ps:"4 médecins, 7 infirmiers, 3 kinés, 2 psychologues, 1 pharmacien", mat:"40 barrières, lame de déneigement, 2 fourgons", loc:"résidence seniors, 2 écoles, restaurant scolaire, PCC"},
+ "Vieille-Chapelle":{pc:9, ps:"1 médecin, 2 infirmiers, 2 ambulanciers", mat:"chasubles", loc:"micro-crèche, école, cantine, PCC"},
+ "Lorgies":{pc:null, ps:"", mat:"", loc:"PCC"},
+ "Neuve-Chapelle":{pc:null, ps:"", mat:"2 véhicules légers", loc:""}
+};
+const SOINS = [
+ {t:"Structures d’exercice coordonné", items:[
+  "MSP de l’Alloeu – 22 rue du 11 Novembre, Laventie (chariot d’urgence, salle d’urgence, téléconsultation Linkello)",
+  "MSP de Fleurbaix – 29 rue de la Malassise (chariot d’urgence, salle d’urgence, Doctolib)",
+  "MSP de Sailly-sur-la-Lys – 2390 rue de la Lys (chariot d’urgence, DAE, salle d’urgence, Doctolib)",
+  "MSP de Lestrem – 82 rue Stéphane Hessel (chariot d’urgence, salle d’urgence, Doctolib)",
+  "Cabinet médical de Richebourg (chariot d’urgence, Doctolib)"]},
+ {t:"Défibrillateurs signalés", items:["EHPAD St Jean, EHPAD de Lestrem, mairies de la CPTS, MSP de Sailly, pharmacie de Fleurbaix"]},
+ {t:"Établissements de référence", items:["Centre hospitalier de Béthune (GHT de l’Artois)","Centre hospitalier d’Armentières"]},
+ {t:"Logistique", items:["Locaux de stockage et de repli : salle des fêtes et annexe de l’ancien centre des impôts, Laventie","Barnums et tentes disponibles","Stock de base d’EPI : CC Flandre Lys et CABBALR","Moyens en cas de coupure de réseaux : recensement en cours (plan 2023)"]},
+ {t:"Densité et zonage", items:["14 communes, 34 564 habitants","3 communes en zone d’action complémentaire (ZAC) : Calonne-sur-la-Lys, Lestrem, Mont-Bernanchon","Indicateurs à jour : Rezone CPTS et Cartosanté (liens ci-contre)"]}
+];
+
+/* ============ Utilitaires ============ */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem("sseal."+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem("sseal."+k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem("sseal."+k); }catch(e){} }
+};
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2200); }
+function nowLocal(){ const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,16); }
+function hhmm(){ const d=new Date(); return d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}); }
+let DL=null; try{ if(window.claude&&window.claude.use) window.claude.use("downloads").then(d=>{DL=d;}).catch(()=>{}); }catch(e){}
+function download(name, text, type){ if(DL){ DL.save({filename:name, data:new Blob([text],{type})}).catch(()=>toast("Téléchargement annulé")); return; } const b=new Blob([text],{type}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},500); }
+function fmtDate(v){ if(!v) return "—"; const d=new Date(v); return isNaN(d) ? v : d.toLocaleString("fr-FR",{dateStyle:"short",timeStyle:"short"}); }
+
+/* ============ État ============ */
+const EMPTY = () => ({f:{date:"",recu:"",canal:"",org:"",corr:"",tel:"",msg:"",rappel:false,rappel_h:"",risk:"",desc:""},
+  com:[], c:{sse:false,demande:false,planblanc:false,vig:0,ps:0,struct:0,pharma:0,snp:0,duree:0,vuln:[],res:[],penurie:false,centre:false,heberg:false,media:false}, mc:[]});
+let S = store.get("event", EMPTY());
+let RISK_OVR = store.get("risks", {});
+let ANN = store.get("annuaire", {});
+let SEUILS = Object.assign({}, DEFAULT_SEUILS, store.get("seuils", {}));
+let GEO = store.get("geo", {});
+const save = () => store.set("event", S);
+
+const riskById = id => RISKS.find(r=>r.id===id);
+const riskFG = r => ({F:(RISK_OVR[r.id]?.F ?? r.F), G:(RISK_OVR[r.id]?.G ?? r.G)});
+const pts = id => BAREME.find(b=>b.id===id).pts;
+
+/* ============ Filtres ============ */
+const FLT_DEF = {r:{q:"",fam:"",lvl:"",cin:""}, a:{q:"",g:"",s:""}, x:{zone:"",com:"",eq:[],alert:false}};
+let FLT = (()=>{ const v=store.get("filtres",{}); return {r:Object.assign({},FLT_DEF.r,v.r), a:Object.assign({},FLT_DEF.a,v.a), x:Object.assign({},FLT_DEF.x,v.x)}; })();
+const saveFlt = () => store.set("filtres", FLT);
+const norm = s => String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const zoneOf = nom => COMMUNES.find(c=>c.nom===nom)?.zone;
+function riskMatch(r){
+  const f=FLT.r, {F,G}=riskFG(r);
+  if(f.q && !norm([r.nom,r.fam,r.orsan,r.cin].join(" ")).includes(norm(f.q).trim())) return false;
+  if(f.fam && r.fam!==f.fam) return false;
+  if(f.lvl && iriLevel(F*G).cls!==f.lvl) return false;
+  if(f.cin && !r.cin.includes(f.cin)) return false;
+  return true;
+}
+function comMatch(nom){
+  const f=FLT.x, c=COMMUNES.find(x=>x.nom===nom);
+  if(f.zone && (!c || c.zone!==f.zone)) return false;
+  if(f.com && nom!==f.com) return false;
+  if(f.alert && (!c || !S.com.includes(c.insee))) return false;
+  return true;
+}
+function bindFilters(){
+  const fams=[...new Set(RISKS.filter(r=>r.id!=="autre").map(r=>r.fam))];
+  $("#fr_fam").innerHTML='<option value="">Toutes</option>'+fams.map(f=>`<option>${esc(f)}</option>`).join("");
+  [["fr_q","q"],["fr_fam","fam"],["fr_lvl","lvl"],["fr_cin","cin"]].forEach(([id,k])=>{ const el=$("#"+id); el.value=FLT.r[k]; el.addEventListener("input",()=>{ FLT.r[k]=el.value; saveFlt(); renderCarto(); }); });
+  $("#fr_reset").onclick=()=>{ FLT.r={...FLT_DEF.r}; saveFlt(); ["fr_q","fr_fam","fr_lvl","fr_cin"].forEach(id=>$("#"+id).value=""); renderCarto(); };
+  $("#fa_g").innerHTML='<option value="">Toutes</option>'+ROLE_GROUPS.map((g,i)=>`<option value="${i}">${esc(g.g)}</option>`).join("");
+  [["fa_q","q"],["fa_g","g"],["fa_s","s"]].forEach(([id,k])=>{ const el=$("#"+id); el.value=FLT.a[k]; el.addEventListener("input",()=>{ FLT.a[k]=el.value; saveFlt(); renderAnn(); }); });
+  $("#fa_reset").onclick=()=>{ FLT.a={...FLT_DEF.a}; saveFlt(); ["fa_q","fa_g","fa_s"].forEach(id=>$("#"+id).value=""); renderAnn(); };
+  const fillCom=()=>{ const list=COMMUNES.filter(c=>!FLT.x.zone||c.zone===FLT.x.zone); if(FLT.x.com && !list.some(c=>c.nom===FLT.x.com)) FLT.x.com="";
+    $("#fx_com").innerHTML='<option value="">Toutes</option>'+list.map(c=>`<option ${c.nom===FLT.x.com?"selected":""}>${esc(c.nom)}</option>`).join(""); };
+  fillCom(); $("#fx_zone").value=FLT.x.zone; $("#fx_alert").checked=!!FLT.x.alert;
+  $$("#fx_eq input").forEach(i=>{ i.checked=FLT.x.eq.includes(+i.value); i.onchange=()=>{ FLT.x.eq=$$("#fx_eq input:checked").map(x=>+x.value); saveFlt(); renderRes(); }; });
+  $("#fx_zone").onchange=()=>{ FLT.x.zone=$("#fx_zone").value; fillCom(); saveFlt(); renderRes(); };
+  $("#fx_com").onchange=()=>{ FLT.x.com=$("#fx_com").value; saveFlt(); renderRes(); };
+  $("#fx_alert").onchange=()=>{ FLT.x.alert=$("#fx_alert").checked; saveFlt(); renderRes(); };
+  $("#fx_reset").onclick=()=>{ FLT.x={...FLT_DEF.x, eq:[]}; saveFlt(); $("#fx_zone").value=""; $("#fx_alert").checked=false; $$("#fx_eq input").forEach(i=>i.checked=false); fillCom(); renderRes(); };
+}
+
+/* ============ Moteur de décision ============ */
+function evaluate(){
+  const c=S.c, R=[]; let score=0;
+  const add=(id, txt, n=1)=>{ const p=pts(id)*n; score+=p; R.push({t:txt, p}); };
+  if(+c.vig===1) add("vig1","Vigilance jaune"); else if(+c.vig===2) add("vig2","Vigilance orange"); else if(+c.vig===3) add("vig3","Vigilance rouge");
+  if(c.ps>=35) add("ps35",`${c.ps} % des professionnels indisponibles`); else if(c.ps>=20) add("ps20",`${c.ps} % des professionnels indisponibles`); else if(c.ps>=10) add("ps10",`${c.ps} % des professionnels indisponibles`);
+  if(c.struct>=2) add("struct2",`${c.struct} structures d’exercice fermées`); else if(c.struct==1) add("struct1","Une structure d’exercice fermée");
+  if(c.pharma>=2) add("pharma2",`${c.pharma} pharmacies fermées`); else if(c.pharma==1) add("pharma1","Une pharmacie fermée");
+  if(+c.snp===3) add("snp3","Soins non programmés au-delà des capacités"); else if(+c.snp===1) add("snp1","Soins non programmés en hausse");
+  const n=S.com.length; if(n>=5) add("com5",`${n} communes touchées`); else if(n>=2) add("com2",`${n} communes touchées`);
+  if(c.vuln.length) add("vuln",`Publics vulnérables : ${c.vuln.length}`, Math.min(2,c.vuln.length));
+  if(c.res.length) add("res",`Réseaux coupés : ${c.res.length}`, Math.min(2,c.res.length));
+  if(c.penurie) add("penurie","Tension sur les produits de santé ou EPI");
+  if(+c.duree===2) add("duree2","Durée prévisible supérieure à 3 jours"); else if(+c.duree===1) add("duree1","Durée prévisible de 1 à 3 jours");
+  if(c.media) add("media","Inquiétude ou médiatisation");
+  const r=riskById(S.f.risk); if(r){ const {F,G}=riskFG(r); if(F*G>=8) add("iri",`Risque coté ${iriLevel(F*G).txt.toLowerCase()} (IRi ${F*G})`); }
+  if(c.centre) add("centre","Besoin d’un centre dédié");
+  if(c.heberg) add("heberg","Évacuation ou hébergement de population");
+
+  let lvl = score>=SEUILS.n3 ? 3 : score>=SEUILS.n2 ? 2 : score>=SEUILS.n1 ? 1 : 0;
+  const forced=[];
+  if(c.sse) forced.push("SSE qualifiée ou volet ORSAN déclenché par l’autorité");
+  if(c.demande) forced.push("Demande de mobilisation de l’ARS");
+  if(c.planblanc) forced.push("Plan blanc ou mobilisation interne d’un hôpital de référence");
+  if(forced.length) lvl=Math.max(lvl,3);
+  let grad2=[];
+  if(c.centre) grad2.push("centre dédié à ouvrir");
+  if(c.heberg) grad2.push("hébergement de population");
+  if(c.ps>=35) grad2.push("plus d’un tiers des professionnels indisponibles");
+  if(c.struct>=3) grad2.push("au moins trois structures fermées");
+  if(lvl>=3 && grad2.length) lvl=4;
+  if(lvl<3) grad2=[];
+  const warn=[];
+  if(lvl>=2 && !S.f.rappel && S.f.org && S.f.org!=="Professionnel de santé du territoire") warn.push("Alerte non confirmée : rappelez l’émetteur avant toute activation (fiche réflexe 1, action 2).");
+  if(lvl>=1 && !S.com.length) warn.push("Aucune commune cochée : les référents de zone et les mairies ne peuvent pas être proposés.");
+  if(S.f.org==="Média") warn.push("Signal d’origine médiatique : vérifiez auprès de l’ARS ou de la préfecture avant de mobiliser.");
+  return {score, lvl, R, forced, grad2, warn};
+}
+
+/* ============ À faire ============ */
+function todoFor(lvl, r){
+  const T=[];
+  if(lvl===0){ T.push("Maintenir la veille : boîte "+CPTS.mailSSE+" et ligne "+CPTS.tel+" relevées les jours ouvrés");
+    T.push("Vérifier l’abonnement DGS-Urgent et l’annuaire de crise (mise à jour annuelle)"); }
+  if(lvl>=1){ T.push("Prévenir le pilote et le référent médical que la CPTS passe en veille renforcée");
+    T.push("Rester joignable de 8 h à 22 h et consulter les sources de veille à chaque point");
+    T.push("Ouvrir la main courante et noter chaque information horodatée"); }
+  if(lvl>=2){ T.push("Fiche réflexe 1 : rappeler l’émetteur, confirmer le message, noter l’heure");
+    T.push("Analyser : quelle situation, qui est touché, quelle réponse la CPTS peut apporter, avec quelles ressources");
+    T.push("Prévenir les membres pré-identifiés de la cellule qu’une activation est possible");
+    T.push("Le pilote (ou son suppléant) décide de l’activation dans les 24 h"); }
+  if(lvl>=3){ T.push("Fiche réflexe 2 : convoquer la cellule (« Plan de gestion de crise déclenché, rejoignez la cellule à… »)");
+    T.push("Faire émarger, répartir les fonctions, distribuer les fiches mission (annexe 6)");
+    T.push("Informer les membres de la CPTS et les partenaires (ARS, CPAM, mairies) en donnant les coordonnées de la cellule");
+    T.push("Fiche réflexe 3 : points de situation à heure fixe (annexe 14), suivi des stocks (annexe 4)");
+    T.push("Désigner une personne pour suivre les recommandations sanitaires (DGS-Urgent, ARS)"); }
+  if(lvl>=4){ T.push("Annexe 8 : désigner le coordinateur du centre dédié et ses trois coordinateurs (personnel, matériel, usagers)");
+    T.push("Choisir les locaux (annexe 3, centres CARE) avec les mairies et l’intercommunalité");
+    T.push("Évaluer les renforts nécessaires et les demander à l’ARS (plateforme Renfort RH, réserve sanitaire)"); }
+  if(lvl>=1 && r) r.actions.forEach(a=>T.push(a));
+  if(lvl>=3) T.push("Prévoir dès maintenant les critères de sortie de crise (fiche réflexe 4, annexe 15)");
+  return T;
+}
+
+/* ============ Contacts ============ */
+const WHEN = ["Immédiat","< 1 h","< 4 h","< 24 h"];
+function contactsFor(lvl, r){
+  const L=new Map();
+  const put=(id, w, why)=>{ const k=id; const cur=L.get(k); if(!cur || WHEN.indexOf(w)<WHEN.indexOf(cur.w)) L.set(k,{id,w,why: why || cur?.why}); };
+  const zones=new Set(S.com.map(i=>COMMUNES.find(c=>c.insee===i)?.zone));
+  const touched=S.com.map(i=>COMMUNES.find(c=>c.insee===i)).filter(Boolean);
+  if(lvl>=1){ put("ref_sse","Immédiat","Tient la veille et ouvre la main courante"); put("pilote","Immédiat", lvl>=3?"Valide l’activation et la stratégie de réponse":lvl===2?"Décide de l’activation sous 24 h":"Informé du passage en veille renforcée"); put("medical","< 1 h","Évalue l’impact sanitaire"); }
+  if(lvl>=2){ if(S.f.tel||S.f.corr) put("__emetteur","Immédiat","Rappel de confirmation (fiche réflexe 1)");
+    put("pilote_s","< 1 h","Si le pilote est injoignable");
+    if(zones.has("o")) put("zone_o","< 4 h","Communes de la zone ouest touchées");
+    if(zones.has("e")) put("zone_e","< 4 h","Communes de la zone est touchées");
+    put("ars_dd","< 4 h","Compléter l’information, signaler la situation"); }
+  if(lvl>=3){ ["communication","logistique","stocks","evaluation"].forEach(id=>put(id,"< 1 h","Membre de la cellule"));
+    if(zones.has("o")) put("zone_o","< 1 h","Référent de zone"); if(zones.has("e")) put("zone_e","< 1 h","Référent de zone");
+    put("ars_pfr","< 1 h","Informer de l’activation de la cellule"); put("ars_dd","< 1 h","Informer et se coordonner");
+    touched.forEach(c=>{ if(c.msp) put(c.msp,"< 1 h","Structure située dans une commune touchée"); });
+    put("membres","< 4 h","Diffusion de l’alerte à tous les professionnels");
+    put("cpam","< 4 h","Information et appui (téléconsultation, dérogations)");
+    touched.forEach(c=>put("mairie_"+c.insee,"< 4 h","Commune touchée"));
+    put("ch_bethune","< 4 h","Établissement de référence"); put("ch_armentieres","< 4 h","Établissement de référence"); }
+  if(lvl>=4){ ["pilote_s","medical_s","logistique_s","stocks_s"].forEach(id=>put(id,"< 4 h","Relève et renfort de la cellule"));
+    put("prefecture","< 4 h","Locaux, hébergement, coordination interservices");
+    put("epci","< 4 h","Centres CARE, matériel, stock d’EPI");
+    put("cpts_voisines","< 24 h","Renfort en professionnels"); }
+  if(lvl>=1 && r){ r.roles.forEach(k=>{
+      const w = lvl>=3 ? "< 4 h" : "< 24 h";
+      if(k==="mairies") touched.forEach(c=>put("mairie_"+c.insee, lvl>=3?"< 4 h":"< 24 h","Risque "+r.nom.toLowerCase()));
+      else put(k, w, "Lié au type de risque"); }); }
+  if(+S.c.snp===3 || S.c.heberg || r?.cin==="rapide" && lvl>=3){ put("samu","Immédiat","Victimes ou urgences vitales : le 15 régule"); }
+  return [...L.values()].sort((a,b)=>WHEN.indexOf(a.w)-WHEN.indexOf(b.w));
+}
+function roleInfo(id){
+  if(id==="__emetteur") return {label:"Émetteur de l’alerte"+(S.f.org?" ("+S.f.org+")":""), nom:S.f.corr, tel:S.f.tel};
+  for(const g of ROLE_GROUPS){ const r=g.roles.find(x=>x.id===id); if(r){ const a=ANN[id]||{}; const d=r.def||{}; return {label:r.label, nom:a.nom||"", fonction:a.fonction||"", tel:a.tel||d.tel||"", tel2:a.tel2||d.tel2||"", mail:a.mail||d.mail||""}; } }
+  return {label:id};
+}
+
+/* ============ Rendu Alerte ============ */
+function renderRiskSelect(){
+  const sel=$("#f_risk"); const fams=[...new Set(RISKS.map(r=>r.fam))];
+  sel.innerHTML='<option value="">— Choisir —</option>'+fams.map(f=>`<optgroup label="${esc(f)}">`+RISKS.filter(r=>r.fam===f).map(r=>`<option value="${r.id}">${esc(r.nom)}</option>`).join("")+"</optgroup>").join("");
+}
+function renderRiskCard(){
+  const r=riskById(S.f.risk), box=$("#riskCard");
+  if(!r){ box.innerHTML=""; return; }
+  const {F,G}=riskFG(r), l=iriLevel(F*G);
+  const geoHits = r.gaspar ? COMMUNES.filter(c=>GEO[c.insee]?.risques?.some(x=>r.gaspar.some(k=>x.toLowerCase().includes(k)))).map(c=>c.nom) : [];
+  box.innerHTML=`<div class="note"><b>${esc(r.orsan)}</b> · cinétique ${esc(r.cin)} · IRi ${F*G} <span class="tag ${l.cls}">${l.txt}</span>
+   ${geoHits.length?`<br>Géorisques recense ce risque à : ${esc(geoHits.join(", "))}`:""}
+   <br>Surveiller : ${r.veille.map(k=>`<a href="${VEILLE[k].u}" target="_blank" rel="noopener">${esc(VEILLE[k].t)}</a>`).join(" · ")}</div>`;
+}
+function renderMap(){
+  const X=lon=>30+(lon-2.58)*1857, Y=lat=>20+(50.672-lat)*2920;
+  const path=pts=>"M"+pts.map(([la,lo])=>X(lo).toFixed(1)+","+Y(la).toFixed(1)).join(" L");
+  let s=`<path class="river" d="${path(RIVERS.lys)}"/><path class="river lawe" d="${path(RIVERS.lawe)}"/>
+   <text class="rlabel" x="${X(2.590)}" y="${Y(50.650)}">la Lys</text><text class="rlabel" x="${X(2.684)}" y="${Y(50.548)}">la Lawe</text>
+   <g class="ext"><text x="${X(2.645)}" y="432">↓ Béthune · CH de Béthune-Beuvry</text><text x="568" y="16" text-anchor="end">CH d’Armentières →</text></g>`;
+  MAP_EXT.forEach(e=>{ s+=`<g class="ext"><circle cx="${X(e.lon)}" cy="${Y(e.lat)}" r="3"/><text x="${X(e.lon)+7}" y="${Y(e.lat)+4}">${esc(e.nom)}</text></g>`; });
+  COMMUNES.forEach(c=>{ const r=5+Math.sqrt(c.pop)/7, sel=S.com.includes(c.insee), cx=X(c.lon), cy=Y(c.lat), pos=LABEL_POS[c.nom]||"r";
+    const L={r:[cx+r+4,cy+4,"start"], l:[cx-r-4,cy+4,"end"], t:[cx,cy-r-5,"middle"], b:[cx,cy+r+13,"middle"]}[pos];
+    s+=`<g class="com ${c.zone} ${sel?"sel":""}" data-insee="${c.insee}" tabindex="0" role="checkbox" aria-checked="${sel}" aria-label="${esc(c.nom)}, ${c.pop} habitants">
+      <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}"/><text x="${L[0].toFixed(1)}" y="${L[1].toFixed(1)}" text-anchor="${L[2]}">${esc(c.nom)}</text></g>`; });
+  $("#map").innerHTML=s;
+  $$("#map .com").forEach(g=>{ const t=()=>toggleCom(g.dataset.insee); g.addEventListener("click",t); g.addEventListener("keydown",e=>{ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); t(); } }); });
+}
+function renderComList(){
+  const grp=z=>COMMUNES.filter(c=>c.zone===z).map(c=>`<label class="check"><input type="checkbox" value="${c.insee}" ${S.com.includes(c.insee)?"checked":""}> ${esc(c.nom)}</label>`).join("");
+  $("#comList").innerHTML=`<div class="grp" style="color:var(--zone-o)">Zone 1 · ouest</div>${grp("o")}<div class="grp" style="color:var(--zone-e)">Zone 2 · est</div>${grp("e")}`;
+  $$("#comList input").forEach(i=>i.addEventListener("change",()=>toggleCom(i.value, i.checked)));
+  const tc=COMMUNES.filter(c=>S.com.includes(c.insee)); const pop=tc.reduce((a,c)=>a+c.pop,0);
+  let txt = tc.length ? `${tc.length} commune${tc.length>1?"s":""} · ${pop.toLocaleString("fr-FR")} habitants` : "Aucune commune sélectionnée";
+  const zac=tc.filter(c=>c.zac).map(c=>c.nom); if(zac.length) txt+=` · zone d’action complémentaire : ${zac.join(", ")}`;
+  const careN=CARE.filter(x=>tc.some(c=>c.nom===x[0])).reduce((a,x)=>a+(x[3]||0),0); if(careN) txt+=` · ${careN.toLocaleString("fr-FR")} places CARE recensées`;
+  $("#popTouched").textContent=txt;
+}
+function toggleCom(insee, on){
+  const has=S.com.includes(insee); if(on===undefined) on=!has;
+  if(on && !has) S.com.push(insee); if(!on && has) S.com=S.com.filter(x=>x!==insee);
+  save(); renderMap(); renderComList(); refresh(); if(FLT.x.alert) renderRes();
+}
+function renderMC(){
+  $("#mcBody").innerHTML = S.mc.length ? S.mc.map((m,i)=>`<tr><td class="num">${i+1}</td><td>${esc(m.h)}</td><td>${esc(m.src)}</td><td>${esc(m.info)}</td><td>${esc(m.act)}</td><td>${esc(m.resp)}</td><td><button class="btn ghost" data-del="${i}" aria-label="Supprimer la ligne ${i+1}">×</button></td></tr>`).join("")
+    : `<tr><td colspan="7" class="muted">Aucune entrée. La première ligne est en général la réception de l’alerte.</td></tr>`;
+  $$("#mcBody [data-del]").forEach(b=>b.addEventListener("click",()=>{ if(confirm("Supprimer cette ligne de la main courante ?")){ S.mc.splice(+b.dataset.del,1); save(); renderMC(); } }));
+}
+function refresh(){
+  const E=evaluate(), L=LEVELS[E.lvl], r=riskById(S.f.risk);
+  const root=document.documentElement;
+  root.style.setProperty("--status", `var(${L.v})`); root.style.setProperty("--status-bg", `var(${L.v}-bg)`);
+  $("#chipCode").textContent=L.code; $("#chipLabel").textContent=L.nom; $("#chipHint").textContent=L.hint;
+  $("#eventName").textContent = r ? `${r.nom}${S.f.date?" · "+fmtDate(S.f.date):""}` : "Aucun événement en cours";
+  $("#verdict").innerHTML=`<div class="big">${L.code} · ${esc(L.nom)}</div><div class="sub">${esc(L.hint)}</div>
+    <div class="meter" aria-hidden="true">${LEVELS.map((_,i)=>`<span class="${i<=E.lvl?"on":""}"></span>`).join("")}</div>
+    <div class="hint">Score ${E.score} · seuils ${SEUILS.n1} / ${SEUILS.n2} / ${SEUILS.n3}</div>
+    ${E.warn.map(w=>`<div class="warn">${esc(w)}</div>`).join("")}
+    ${E.forced.length||E.R.length?`<ul class="why">${E.forced.map(f=>`<li><b>${esc(f)}</b> <span class="pts">· activation d’office</span></li>`).join("")}${E.R.map(x=>`<li>${esc(x.t)} <span class="pts">· +${x.p}</span></li>`).join("")}${E.grad2.map(g=>`<li><b>Gradation 2</b> : ${esc(g)}</li>`).join("")}</ul>`:""}`;
+  $("#todo").innerHTML=todoFor(E.lvl,r).map(t=>`<li>${esc(t)}</li>`).join("");
+  const raw=contactsFor(E.lvl,r), byKey=new Map();
+  raw.forEach(c=>{ const i=roleInfo(c.id); const k=(i.nom&&(i.tel||i.mail)) ? (i.nom+"|"+i.tel+"|"+i.mail) : c.id;
+    if(byKey.has(k)){ const g=byKey.get(k); g.i.label+=" · "+i.label; }
+    else byKey.set(k,{w:c.w, why:c.why, i}); });
+  const C=[...byKey.values()];
+  $("#contacts").innerHTML = C.length ? C.map(c=>{ const i=c.i;
+     const subj=encodeURIComponent(`[SSE ${L.code}] ${r?r.nom:"Alerte"} – ${CPTS.nom}`);
+     const links=[i.tel?`<a href="tel:${i.tel.replace(/\s/g,"")}">${esc(i.tel)}</a>`:"", i.tel2?`<a href="tel:${i.tel2.replace(/\s/g,"")}">${esc(i.tel2)}</a>`:"", i.mail?`<a href="mailto:${esc(i.mail)}?subject=${subj}">${esc(i.mail)}</a>`:""].filter(Boolean).join("");
+     return `<div class="contact"><div class="when">${c.w}</div><div class="who"><b>${esc(i.nom||i.label)}</b>${i.nom?`<span class="role">${esc(i.label)}</span>`:""}<span class="why2">${esc(c.why||"")}</span>
+       ${links?`<div class="links">${links}</div>`:`<div class="missing">Coordonnées à importer dans l’onglet Annuaire</div>`}</div></div>`; }).join("")
+     : `<p class="muted">En veille opérationnelle, aucun appel n’est nécessaire. Le niveau monte dès qu’un critère est coché.</p>`;
+  renderRiskCard(); renderPrint(E);
+}
+
+/* ============ Liaisons du formulaire ============ */
+function bindForm(){
+  const F=S.f;
+  const map={f_date:"date",f_recu:"recu",f_canal:"canal",f_org:"org",f_corr:"corr",f_tel:"tel",f_msg:"msg",f_rappel_h:"rappel_h",f_risk:"risk",f_desc:"desc"};
+  Object.entries(map).forEach(([id,k])=>{ const el=$("#"+id); el.value=F[k]||""; el.addEventListener("input",()=>{ F[k]=el.value; save(); refresh(); }); });
+  if(!F.date){ F.date=nowLocal(); $("#f_date").value=F.date; save(); }
+  const rp=$("#f_rappel"); rp.checked=!!F.rappel; rp.addEventListener("change",()=>{ F.rappel=rp.checked; if(rp.checked && !F.rappel_h){ F.rappel_h=hhmm()+" – "; $("#f_rappel_h").value=F.rappel_h; } save(); refresh(); });
+  const C=S.c;
+  ["sse","demande","planblanc","penurie","centre","heberg","media"].forEach(k=>{ const el=$("#c_"+k); el.checked=!!C[k]; el.addEventListener("change",()=>{ C[k]=el.checked; save(); refresh(); }); });
+  const ps=$("#c_psindispo"); ps.value=C.ps; $("#c_psindispo_v").textContent=C.ps+" %"; ps.addEventListener("input",()=>{ C.ps=+ps.value; $("#c_psindispo_v").textContent=C.ps+" %"; save(); refresh(); });
+  [["c_struct","struct"],["c_pharma","pharma"]].forEach(([id,k])=>{ const el=$("#"+id); el.value=C[k]; el.addEventListener("input",()=>{ C[k]=Math.max(0,+el.value||0); save(); refresh(); }); });
+  [["vig","vig"],["snp","snp"],["duree","duree"]].forEach(([n,k])=>{ $$(`input[name=${n}]`).forEach(i=>{ i.checked=(+i.value===+C[k]); i.addEventListener("change",()=>{ C[k]=+i.value; save(); refresh(); }); }); });
+  [["#g_vuln","vuln"],["#g_res","res"]].forEach(([sel,k])=>{ $$(sel+" input").forEach(i=>{ i.checked=C[k].includes(i.value); i.addEventListener("change",()=>{ C[k]=$$(sel+" input:checked").map(x=>x.value); save(); refresh(); }); }); });
+  $("#btnAllCom").onclick=()=>{ S.com=COMMUNES.map(c=>c.insee); save(); renderMap(); renderComList(); refresh(); };
+  $("#btnNoCom").onclick=()=>{ S.com=[]; save(); renderMap(); renderComList(); refresh(); };
+  $("#mc_h").value=hhmm();
+  $("#mc_add").onclick=()=>{ const m={h:$("#mc_h").value||hhmm(),src:$("#mc_src").value,info:$("#mc_info").value,act:$("#mc_act").value,resp:$("#mc_resp").value};
+    if(!m.info && !m.act){ toast("Renseignez au moins une information ou une action"); $("#mc_info").focus(); return; }
+    S.mc.push(m); save(); renderMC(); ["mc_src","mc_info","mc_act","mc_resp"].forEach(id=>$("#"+id).value=""); $("#mc_h").value=hhmm(); $("#mc_info").focus(); };
+  $("#btnStampDecision").onclick=()=>{ const E=evaluate(), L=LEVELS[E.lvl];
+    S.mc.push({h:hhmm(), src:"Cellule SSE", info:`Niveau ${L.code} – ${L.nom} (score ${E.score})`, act:E.forced.concat(E.R.map(x=>x.t)).join(" ; "), resp:S.f.recu||""}); save(); renderMC(); toast("Niveau horodaté dans la main courante"); };
+}
+
+/* ============ Exports ============ */
+function summaryMd(){
+  const E=evaluate(), L=LEVELS[E.lvl], r=riskById(S.f.risk);
+  const com=COMMUNES.filter(c=>S.com.includes(c.insee)).map(c=>c.nom).join(", ")||"—";
+  const C=contactsFor(E.lvl,r).map(c=>{ const i=roleInfo(c.id); return `- ${c.w} · ${i.label}${i.nom?" ("+i.nom+")":""}`; }).join("\n");
+  return `## ${L.code} · ${L.nom} — ${r?r.nom:"Événement à qualifier"}
+
+**Réception** : ${fmtDate(S.f.date)} par ${S.f.recu||"—"} (${S.f.canal||"canal ?"})
+**Émetteur** : ${S.f.org||"—"} · ${S.f.corr||"—"} · ${S.f.tel||"—"}
+**Confirmation** : ${S.f.rappel?"oui, "+(S.f.rappel_h||""):"non confirmée"}
+**Communes** : ${com}
+
+### Message reçu
+${S.f.msg||"—"}
+
+### Ce qui est connu
+${S.f.desc||"—"}
+
+### Justification du niveau (score ${E.score})
+${E.forced.map(f=>"- **"+f+"** (activation d’office)").concat(E.R.map(x=>`- ${x.t} (+${x.p})`)).concat(E.grad2.map(g=>"- Gradation 2 : "+g)).join("\n")||"- Aucun critère"}
+
+### Contacts à mobiliser
+${C||"—"}
+
+### Actions
+${todoFor(E.lvl,r).map(t=>"- [ ] "+t).join("\n")}
+`;
+}
+function renderPrint(E){
+  const L=LEVELS[E.lvl], r=riskById(S.f.risk);
+  const com=COMMUNES.filter(c=>S.com.includes(c.insee)).map(c=>c.nom).join(", ")||"—";
+  const cell=["pilote","pilote_s","communication","medical","medical_s","logistique","stocks","evaluation","zone_o","zone_e"].map(id=>{ const i=roleInfo(id); return `<tr><td>${esc(i.label)}</td><td>${esc(i.nom)}</td><td>${esc(i.tel)}</td><td>☐ Oui ☐ Non</td><td>…… h ……</td></tr>`; }).join("");
+  $("#printSheet").innerHTML=`<img src="${$("#logoImg").src}" alt="" style="height:42pt;float:right"><h1>Fiche d’alerte · ${esc(CPTS.nom)}</h1>
+  <p>Niveau retenu : <b>${L.code} – ${esc(L.nom)}</b> (score ${E.score}) · imprimée le ${new Date().toLocaleString("fr-FR")}</p>
+  <table><tr><th>Reçue le</th><td>${esc(fmtDate(S.f.date))}</td><th>Par</th><td>${esc(S.f.recu)}</td></tr>
+  <tr><th>Émetteur</th><td>${esc(S.f.org)}</td><th>Correspondant</th><td>${esc(S.f.corr)} · ${esc(S.f.tel)}</td></tr>
+  <tr><th>Vérification</th><td colspan="3">${S.f.rappel?"Rappel effectué : "+esc(S.f.rappel_h):"Rappel fait à …… h ……"}</td></tr>
+  <tr><th>Événement</th><td colspan="3">${esc(r?r.nom:"")}</td></tr><tr><th>Communes</th><td colspan="3">${esc(com)}</td></tr>
+  <tr><th>Message</th><td colspan="3">${esc(S.f.msg)}</td></tr><tr><th>Connu à ce stade</th><td colspan="3">${esc(S.f.desc)}</td></tr></table>
+  <h3 style="margin-top:10pt">Confirmation de l’alerte</h3>
+  <table><tr><th>Au président de la CPTS</th><td>${esc(roleInfo("pilote").nom)}</td><td>…… h ……</td></tr><tr><th>Au référent crise sanitaire</th><td>${esc(roleInfo("ref_sse").nom)}</td><td>…… h ……</td></tr><tr><th>Au coordinateur de crise</th><td>${esc(roleInfo("communication").nom)}</td><td>…… h ……</td></tr></table>
+  <h3 style="margin-top:10pt">Composition de la cellule de crise</h3>
+  <table><tr><th>Fonction</th><th>Nom</th><th>Téléphone</th><th>Présent</th><th>Arrivée</th></tr>${cell}</table>
+  <h3 style="margin-top:10pt">Justification</h3><ul>${E.forced.map(f=>`<li>${esc(f)}</li>`).join("")}${E.R.map(x=>`<li>${esc(x.t)} (+${x.p})</li>`).join("")}</ul>
+  <h3>Main courante</h3><table><tr><th>N°</th><th>Heure</th><th>Source</th><th>Information</th><th>Action</th><th>Responsable</th></tr>${S.mc.map((m,i)=>`<tr><td>${i+1}</td><td>${esc(m.h)}</td><td>${esc(m.src)}</td><td>${esc(m.info)}</td><td>${esc(m.act)}</td><td>${esc(m.resp)}</td></tr>`).join("")}</table>`;
+}
+function ghRepo(){
+  const s=store.get("gh",{}); if(s.owner && s.repo) return s;
+  const h=location.hostname; if(h.endsWith(".github.io")){ const owner=h.split(".")[0]; const seg=location.pathname.split("/").filter(Boolean)[0]; return {owner, repo: seg && !seg.endsWith(".html") ? seg : h}; }
+  return s;
+}
+function openIssue(){
+  const g=ghRepo(); if(!g.owner||!g.repo){ toast("Renseignez le dépôt GitHub dans Réglages"); showView("reglages"); return; }
+  const E=evaluate(), L=LEVELS[E.lvl], r=riskById(S.f.risk);
+  const cut=(s,n)=>s.length>n?s.slice(0,n-1)+"…":s;
+  const p=new URLSearchParams({template:"alerte-sse.yml",
+    title:`[${L.code}] ${r?r.nom:"Alerte"} – ${fmtDate(S.f.date)}`,
+    niveau:`${L.code} – ${L.nom} (score ${E.score})`,
+    date_heure:fmtDate(S.f.date), emetteur:[S.f.org,S.f.corr,S.f.tel].filter(Boolean).join(" · "),
+    risque:r?r.nom:"", communes:COMMUNES.filter(c=>S.com.includes(c.insee)).map(c=>c.nom).join(", "),
+    synthese:cut([S.f.msg,S.f.desc].filter(Boolean).join("\n\n"),1500),
+    criteres:cut(E.forced.concat(E.R.map(x=>`${x.t} (+${x.p})`)).map(x=>"- "+x).join("\n"),1200),
+    contacts:cut(contactsFor(E.lvl,r).map(c=>`- ${c.w} · ${roleInfo(c.id).label}`).join("\n"),1500),
+    actions:cut(todoFor(E.lvl,r).map(t=>"- [ ] "+t).join("\n"),2000)});
+  window.open(`https://github.com/${encodeURIComponent(g.owner)}/${encodeURIComponent(g.repo)}/issues/new?${p}`,"_blank","noopener");
+}
+function bindExports(){
+  $("#btnPrint").onclick=()=>{ refresh(); window.print(); };
+  $("#btnMd").onclick=async()=>{ const t=summaryMd(); try{ await navigator.clipboard.writeText(t); toast("Synthèse copiée"); }catch(e){ download("synthese-sse.md",t,"text/markdown"); } };
+  $("#btnIssue").onclick=openIssue;
+  $("#btnJson").onclick=()=>download(`alerte-sse-${(S.f.date||nowLocal()).replace(/[:T]/g,"-")}.json`, JSON.stringify(S,null,2),"application/json");
+  $("#fileEvent").onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ const o=JSON.parse(t); if(!o.f||!o.c) throw 0; S=Object.assign(EMPTY(),o); save(); location.reload(); }).catch(()=>toast("Fichier non reconnu : exportez-le depuis cet outil")); };
+  $("#btnReset").onclick=()=>{ if(!confirm("Archiver puis effacer l’alerte en cours ? Un export JSON va être téléchargé.")) return;
+    download(`alerte-sse-archive-${nowLocal().replace(/[:T]/g,"-")}.json`, JSON.stringify(S,null,2),"application/json"); S=EMPTY(); save(); location.reload(); };
+}
+
+/* ============ Cartographie ============ */
+function renderCarto(){
+  let m=`<div class="ax"></div>`+[1,2,3,4].map(g=>`<div class="ax"><b>G${g}</b></div>`).join("");
+  for(let f=4; f>=1; f--){ m+=`<div class="ax"><b>F${f}</b></div>`;
+    for(let g=1; g<=4; g++){ const v=f*g, l=iriLevel(v); const rs=RISKS.filter(r=>r.id!=="autre"&&riskFG(r).F===f&&riskFG(r).G===g);
+      m+=`<div class="cell ${l.cls}"><span class="s">${v}</span>${rs.map(r=>`<button type="button" data-pick="${r.id}" class="${riskMatch(r)?"":"dim"}">${esc(r.nom.split(" (")[0])}</button>`).join("")}</div>`; } }
+  $("#matrix").innerHTML=m;
+  $$("#matrix [data-pick]").forEach(b=>b.onclick=()=>{ S.f.risk=b.dataset.pick; $("#f_risk").value=S.f.risk; save(); refresh(); showView("alerte"); toast("Risque reporté dans l’alerte"); });
+  const opt=(n,v)=>[1,2,3,4].map(i=>`<option value="${i}" ${i===v?"selected":""}>${n}${i}</option>`).join("");
+  const allR=RISKS.filter(r=>r.id!=="autre"), shownR=allR.filter(riskMatch);
+  $("#fr_count").textContent = shownR.length===allR.length ? `${allR.length} risques` : `${shownR.length} risque${shownR.length>1?"s":""} sur ${allR.length}`;
+  $("#riskTable").innerHTML=(shownR.length?"":`<tr class="empty-row"><td colspan="8">Aucun risque ne correspond aux filtres.</td></tr>`)+shownR.sort((a,b)=>{const A=riskFG(a),B=riskFG(b);return B.F*B.G-A.F*A.G;}).map(r=>{ const {F,G}=riskFG(r), l=iriLevel(F*G);
+    return `<tr><td>${esc(r.nom)}</td><td>${esc(r.orsan)}</td><td>${esc(r.cin)}</td>
+     <td><select data-r="${r.id}" data-k="F" aria-label="Fréquence">${opt("F",F)}</select></td><td><select data-r="${r.id}" data-k="G" aria-label="Gravité">${opt("G",G)}</select></td>
+     <td class="num"><b>${F*G}</b></td><td><span class="tag ${l.cls}">${l.txt}</span></td><td>${r.veille.map(k=>`<a href="${VEILLE[k].u}" target="_blank" rel="noopener">${esc(VEILLE[k].t.split(" (")[0])}</a>`).join(", ")}</td></tr>`; }).join("");
+  $$("#riskTable select").forEach(s=>s.onchange=()=>{ const o=RISK_OVR[s.dataset.r]||{}; o[s.dataset.k]=+s.value; RISK_OVR[s.dataset.r]=o; store.set("risks",RISK_OVR); renderCarto(); refresh(); });
+  renderGeo();
+}
+function renderGeo(){
+  $("#geoTable").innerHTML=COMMUNES.map(c=>{ const g=GEO[c.insee];
+    const risques = g ? (g.err ? `<span class="muted">${esc(g.err)}</span>` : (g.risques.length ? `<div class="chips">${g.risques.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>` : `<span class="muted">Aucun risque listé</span>`)) : `<span class="muted">Non interrogé</span>`;
+    const icpe = g && !g.err ? (g.icpe ? `${g.icpe.n} ICPE${g.icpe.seveso.length?`<div class="chips">${g.icpe.seveso.map(s=>`<span class="chip hot">${esc(s.nom)} · ${esc(s.statut)}</span>`).join("")}</div>`:""}` : "—") : "";
+    return `<tr><td><b>${esc(c.nom)}</b><br><small>${c.insee}</small></td><td>${c.zone==="o"?"Ouest":"Est"}</td><td class="num">${c.pop.toLocaleString("fr-FR")}</td><td>${risques}</td><td>${icpe}</td><td class="num">${g&&!g.err&&g.catnat!=null?g.catnat:""}</td>
+      <td><a href="https://georisques.gouv.fr/api/v1/rapport_pdf?code_insee=${c.insee}" target="_blank" rel="noopener">Rapport PDF</a>${g?`<br><small>${esc(new Date(g.date).toLocaleDateString("fr-FR"))}</small>`:""}</td></tr>`; }).join("");
+}
+async function fetchJson(u){ const r=await fetch(u,{headers:{Accept:"application/json"}}); if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); }
+function collect(o, keys, out=new Set()){ if(Array.isArray(o)) o.forEach(x=>collect(x,keys,out)); else if(o&&typeof o==="object") for(const [k,v] of Object.entries(o)){ if(keys.includes(k)&&typeof v==="string") out.add(v.trim()); else collect(v,keys,out); } return out; }
+async function geoOne(c){
+  const base="https://georisques.gouv.fr/api/v1";
+  const [a,b,d]=await Promise.allSettled([fetchJson(`${base}/gaspar/risques?code_insee=${c.insee}`), fetchJson(`${base}/installations_classees?code_insee=${c.insee}&page_size=100`), fetchJson(`${base}/gaspar/catnat?code_insee=${c.insee}&page_size=100`)]);
+  if(a.status==="rejected" && b.status==="rejected" && d.status==="rejected") return {date:Date.now(), err:"API injoignable (réseau ou blocage du navigateur)"};
+  const res={date:Date.now(), risques:[], icpe:null, catnat:null};
+  if(a.status==="fulfilled") res.risques=[...collect(a.value,["libelle_risque_long","libelleRisqueLong","libelle_risque"])];
+  if(b.status==="fulfilled"){ const arr=b.value.data||b.value.results_list||[]; const list=Array.isArray(arr)?arr:[];
+    const sev=list.map(x=>({nom:x.raisonSociale||x.raison_sociale||x.nomEts||"Établissement", statut:String(x.statutSeveso||x.statut_seveso||x.regimeSeveso||"")})).filter(x=>/seveso/i.test(x.statut)&&!/non/i.test(x.statut));
+    res.icpe={n: typeof b.value.results==="number"?b.value.results:list.length, seveso:sev}; }
+  if(d.status==="fulfilled"){ const v=d.value; res.catnat = typeof v.results==="number" ? v.results : (Array.isArray(v.data)?v.data.length:null); }
+  return res;
+}
+async function geoAll(){
+  const btn=$("#btnGeoAll"); btn.disabled=true; let ok=0;
+  for(const [i,c] of COMMUNES.entries()){ $("#geoStatus").textContent=`${c.nom} (${i+1}/14)…`;
+    try{ GEO[c.insee]=await geoOne(c); if(!GEO[c.insee].err) ok++; }catch(e){ GEO[c.insee]={date:Date.now(), err:"Erreur : "+e.message}; }
+    store.set("geo",GEO); renderGeo(); }
+  btn.disabled=false;
+  $("#geoStatus").textContent = ok ? `${ok} communes à jour.` : "L’API n’est pas joignable depuis cette page publiée. Ouvrez le rapport PDF de chaque commune, ou utilisez la version hébergée sur GitHub Pages.";
+  renderRiskCard();
+}
+
+/* ============ Annuaire ============ */
+function renderAnn(){
+  const n=Object.values(ANN).filter(a=>a&&(a.nom||a.tel||a.mail)).length;
+  $("#annStatus").textContent = n ? `${n} fonctions renseignées dans ce navigateur.` : "Aucune coordonnée personnelle enregistrée dans ce navigateur.";
+  const fa=FLT.a, active=!!(fa.q||fa.g||fa.s); let shown=0, total=0;
+  const roleOk=r=>{ const a=ANN[r.id]||{}, d=r.def||{}; const filled=!!(a.nom||a.tel||a.mail||d.tel||d.mail);
+    if(fa.s==="ok" && !filled) return false; if(fa.s==="todo" && filled) return false;
+    if(fa.q && !norm([r.label,a.nom,a.fonction].join(" ")).includes(norm(fa.q).trim())) return false; return true; };
+  const groups=ROLE_GROUPS.map((g,gi)=>{ total+=g.roles.length; const roles=(fa.g===""||+fa.g===gi)?g.roles.filter(roleOk):[]; shown+=roles.length; return {g,gi,roles}; }).filter(x=>x.roles.length);
+  $("#fa_count").textContent = active ? `${shown} fonction${shown>1?"s":""} sur ${total}` : `${total} fonctions`;
+  $("#annGroups").innerHTML=(groups.length?"":`<div class="panel muted">Aucune fonction ne correspond aux filtres.</div>`)+groups.map(({g,gi,roles})=>`<details class="panel" ${(active||gi<2)?"open":""}><summary>${esc(g.g)}${active?` <span class="hint">(${roles.length})</span>`:""}</summary>
+    <div class="tbl-wrap"><table><thead><tr><th>Fonction</th><th>Nom</th><th>Téléphone</th><th>Mail</th></tr></thead><tbody>
+    ${roles.map(r=>{ const a=ANN[r.id]||{}, d=r.def||{}; return `<tr><td>${esc(r.label)}</td>
+      <td><input type="text" data-a="${r.id}" data-k="nom" value="${esc(a.nom||"")}" aria-label="Nom – ${esc(r.label)}"></td>
+      <td><input type="tel" data-a="${r.id}" data-k="tel" value="${esc(a.tel||"")}" placeholder="${esc(d.tel||"")}" aria-label="Téléphone – ${esc(r.label)}"></td>
+      <td><input type="email" data-a="${r.id}" data-k="mail" value="${esc(a.mail||"")}" placeholder="${esc(d.mail||"")}" aria-label="Mail – ${esc(r.label)}"></td></tr>`; }).join("")}
+    </tbody></table></div></details>`).join("");
+  $$("#annGroups input").forEach(i=>i.addEventListener("change",()=>{ const o=ANN[i.dataset.a]||{}; o[i.dataset.k]=i.value.trim(); ANN[i.dataset.a]=o; store.set("annuaire",ANN); refresh(); renderAnnStatus(); }));
+}
+function renderAnnStatus(){ const n=Object.values(ANN).filter(a=>a&&(a.nom||a.tel||a.mail)).length; $("#annStatus").textContent = n ? `${n} fonctions renseignées dans ce navigateur.` : "Aucune coordonnée personnelle enregistrée dans ce navigateur."; }
+function bindAnn(){
+  $("#fileAnnuaire").onchange=e=>{ const f=e.target.files[0]; if(!f) return; f.text().then(t=>{ const o=JSON.parse(t); const roles=o.roles||o; let n=0;
+      for(const [k,v] of Object.entries(roles)){ if(v&&typeof v==="object"&&!k.startsWith("_")){ ANN[k]=Object.assign({},ANN[k]||{},v); n++; } }
+      store.set("annuaire",ANN); renderAnn(); refresh(); toast(`${n} fonctions importées`); }).catch(()=>toast("Fichier JSON illisible")); e.target.value=""; };
+  $("#btnAnnExport").onclick=()=>download("annuaire-cellule-sse.json", JSON.stringify({version:1, maj:new Date().toISOString().slice(0,10), roles:ANN},null,2),"application/json");
+  $("#btnAnnClear").onclick=()=>{ if(confirm("Effacer toutes les coordonnées de ce navigateur ?")){ ANN={}; store.del("annuaire"); renderAnn(); refresh(); } };
+}
+
+/* ============ Ressources ============ */
+function renderRes(){
+  $("#resSoins").innerHTML=SOINS.map(s=>`<h3 style="margin-top:.8rem">${esc(s.t)}</h3><ul class="actions-list">${s.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`).join("");
+  const groups=[["Alertes officielles",["dgs","ars","spf","pref62","pref59","fralert"]],["Météo et environnement",["meteo","vigicrues","atmo","pollens","georisques"]],["Continuité des soins",["ansm","cyber","enedis"]],["Renforts et offre de soins",["renfort","reserve","rezone","cartosante"]]];
+  $("#resVeille").innerHTML=groups.map(([t,ks])=>`<h3 style="margin-top:.8rem">${t}</h3><ul class="actions-list">${ks.map(k=>`<li><a href="${VEILLE[k].u}" target="_blank" rel="noopener">${esc(VEILLE[k].t)}</a></li>`).join("")}</ul>`).join("");
+  const care=CARE.filter(r=>comMatch(r[0]) && FLT.x.eq.every(i=>r[i]==="Oui"));
+  const moy=Object.entries(MOYENS).filter(([c])=>comMatch(c));
+  const places=care.reduce((a,r)=>a+(r[3]||0),0);
+  $("#fx_count").textContent=`${care.length} lieu${care.length>1?"x":""} d’accueil${places?` · ${places.toLocaleString("fr-FR")} places recensées`:""} · ${moy.length} commune${moy.length>1?"s":""} avec moyens`;
+  if(FLT.x.alert && !S.com.length) $("#fx_count").textContent="Aucune commune cochée dans l’alerte en cours";
+  $("#careTable").innerHTML=(care.length?"":`<tr class="empty-row"><td colspan="8">Aucun lieu ne correspond aux filtres. Les communes de la CC Flandre Lys et Lestrem ne sont pas encore recensées.</td></tr>`)+care.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td class="num">${r[3]??""}</td><td>${esc(r[4])}</td><td>${esc(r[5])}</td><td>${esc(r[6])}</td><td>${esc(r[7])}</td></tr>`).join("");
+  $("#moyensTable").innerHTML=(moy.length?"":`<tr class="empty-row"><td colspan="5">Aucune commune ne correspond aux filtres.</td></tr>`)+moy.map(([c,m])=>`<tr><td>${esc(c)}</td><td class="num">${m.pc??""}</td><td>${esc(m.ps)}</td><td>${esc(m.mat)}</td><td>${esc(m.loc)}</td></tr>`).join("");
+}
+
+/* ============ Réglages ============ */
+function bindSettings(){
+  ["n1","n2","n3"].forEach(k=>{ const el=$("#s_"+k); el.value=SEUILS[k]; el.onchange=()=>{ SEUILS[k]=Math.max(1,+el.value||DEFAULT_SEUILS[k]); store.set("seuils",SEUILS); refresh(); }; });
+  $("#pointsTable").innerHTML=BAREME.map(b=>`<tr><td>${esc(b.label)}</td><td class="num">${b.pts}</td></tr>`).join("")+`<tr><td><b>SSE qualifiée, demande de l’ARS ou plan blanc</b></td><td class="num"><b>activation d’office</b></td></tr>`;
+  const g=ghRepo(); $("#s_owner").value=g.owner||""; $("#s_repo").value=g.repo||"";
+  ["s_owner","s_repo"].forEach(id=>$("#"+id).onchange=()=>store.set("gh",{owner:$("#s_owner").value.trim(), repo:$("#s_repo").value.trim()}));
+  const th=store.get("theme","auto"); applyTheme(th); $$("input[name=theme]").forEach(i=>{ i.checked=i.value===th; i.onchange=()=>{ store.set("theme",i.value); applyTheme(i.value); }; });
+  $("#btnRiskReset").onclick=()=>{ if(confirm("Revenir aux cotations proposées ?")){ RISK_OVR={}; store.del("risks"); renderCarto(); refresh(); } };
+  $("#btnRiskCsv").onclick=()=>{ const rows=[["Risque","Volet ORSAN","Cinétique","F","G","IRi","Niveau"]].concat(RISKS.filter(r=>r.id!=="autre").map(r=>{const{F,G}=riskFG(r);return [r.nom,r.orsan,r.cin,F,G,F*G,iriLevel(F*G).txt];}));
+    download("registre-risques-cpts-artois-lys.csv","\ufeff"+rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(";")).join("\n"),"text/csv"); };
+  $("#btnGeoAll").onclick=geoAll;
+}
+function applyTheme(t){ if(t==="auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme",t); }
+
+/* ============ Navigation ============ */
+function showView(v){ $$("nav.tabs button").forEach(b=>b.setAttribute("aria-selected", b.dataset.view===v)); $$(".view").forEach(s=>s.hidden = s.id!=="view-"+v); window.scrollTo(0,0); }
+$$("nav.tabs button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+
+/* ============ Démarrage ============ */
+renderRiskSelect(); bindFilters(); bindForm(); renderMap(); renderComList(); renderMC(); bindExports();
+renderCarto(); renderAnn(); bindAnn(); renderRes(); bindSettings(); refresh();
+</script>
+</body>
+</html>
