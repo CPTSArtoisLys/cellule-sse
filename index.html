@@ -356,12 +356,12 @@ details.panel[open]>summary{margin-bottom:.6rem}
      <div class="btns">
        <button class="btn primary" type="button" id="btnPrint">Imprimer la fiche d’alerte</button>
        <button class="btn" type="button" id="btnMd">Copier la synthèse</button>
-       <button class="btn" type="button" id="btnIssue">Créer un ticket GitHub</button>
+       <button class="btn" type="button" id="btnIssue">Enregistrer l’alerte (Jotform)</button>
        <button class="btn ghost" type="button" id="btnJson">Exporter (JSON)</button>
        <label class="btn ghost" style="font-weight:400">Importer<input type="file" id="fileEvent" accept="application/json" hidden></label>
        <button class="btn ghost" type="button" id="btnReset">Nouvelle alerte</button>
      </div>
-     <p class="hint" style="margin-top:.6rem">Les données restent dans ce navigateur. Le ticket GitHub n’est confidentiel que si le dépôt est privé.</p>
+     <p class="hint" style="margin-top:.6rem">Les données restent dans ce navigateur. « Enregistrer l’alerte » ouvre le formulaire Jotform prérempli : relisez puis envoyez. N’y mettez ni nom de patient ni donnée de santé.</p>
    </div>
   </aside>
  </div>
@@ -460,11 +460,10 @@ details.panel[open]>summary{margin-bottom:.6rem}
     <div class="tbl-wrap" style="margin-top:1rem"><table><thead><tr><th>Critère</th><th>Points</th></tr></thead><tbody id="pointsTable"></tbody></table></div>
   </div>
   <div class="panel">
-    <h2>Dépôt GitHub pour les tickets</h2>
-    <p class="intro">Détecté automatiquement si la page est servie par GitHub Pages. Sinon, renseignez-le.</p>
+    <h2>Formulaire d’enregistrement des alertes</h2>
+    <p class="intro">Adresse du formulaire Jotform ouvert par le bouton « Enregistrer l’alerte ». À ne modifier que si le formulaire change.</p>
     <div class="fields">
-      <div class="field"><label for="s_owner">Propriétaire (compte ou organisation)</label><input type="text" id="s_owner" placeholder="cpts-artois-lys"></div>
-      <div class="field"><label for="s_repo">Dépôt</label><input type="text" id="s_repo" placeholder="cellule-sse"></div>
+      <div class="field wide"><label for="s_jf">Adresse du formulaire</label><input type="text" id="s_jf" placeholder="https://form.jotform.com/…"></div>
     </div>
   </div>
   <div class="panel">
@@ -1081,25 +1080,20 @@ function renderPrint(E){
   <h3 style="margin-top:10pt">Justification</h3><ul>${E.forced.map(f=>`<li>${esc(f)}</li>`).join("")}${E.R.map(x=>`<li>${esc(x.t)} (+${x.p})</li>`).join("")}</ul>
   <h3>Main courante</h3><table><tr><th>N°</th><th>Heure</th><th>Source</th><th>Information</th><th>Action</th><th>Responsable</th></tr>${S.mc.map((m,i)=>`<tr><td>${i+1}</td><td>${esc(m.h)}</td><td>${esc(m.src)}</td><td>${esc(m.info)}</td><td>${esc(m.act)}</td><td>${esc(m.resp)}</td></tr>`).join("")}</table>`;
 }
-function ghRepo(){
-  const s=store.get("gh",{}); if(s.owner && s.repo) return s;
-  const h=location.hostname; if(h.endsWith(".github.io")){ const owner=h.split(".")[0]; const seg=location.pathname.split("/").filter(Boolean)[0]; return {owner, repo: seg && !seg.endsWith(".html") ? seg : h}; }
-  return s;
-}
+const JOTFORM_DEFAUT = "https://form.jotform.com/263166854129363";
+const jotformUrl = () => (store.get("jotform","")||"").trim() || JOTFORM_DEFAUT;
 function openIssue(){
-  const g=ghRepo(); if(!g.owner||!g.repo){ toast("Renseignez le dépôt GitHub dans Réglages"); showView("reglages"); return; }
   const E=evaluate(), L=LEVELS[E.lvl], r=riskById(S.f.risk);
   const cut=(s,n)=>s.length>n?s.slice(0,n-1)+"…":s;
-  const p=new URLSearchParams({template:"alerte-sse.yml",
-    title:`[${L.code}] ${r?r.nom:"Alerte"} – ${fmtDate(S.f.date)}`,
+  const p=new URLSearchParams({
     niveau:`${L.code} – ${L.nom} (score ${E.score})`,
-    date_heure:fmtDate(S.f.date), emetteur:[S.f.org,S.f.corr,S.f.tel].filter(Boolean).join(" · "),
+    dateHeure:fmtDate(S.f.date), emetteur:[S.f.org,S.f.corr,S.f.tel].filter(Boolean).join(" · "),
     risque:r?r.nom:"", communes:COMMUNES.filter(c=>S.com.includes(c.insee)).map(c=>c.nom).join(", "),
     synthese:cut([S.f.msg,S.f.desc].filter(Boolean).join("\n\n"),1500),
     criteres:cut(E.forced.concat(E.R.map(x=>`${x.t} (+${x.p})`)).map(x=>"- "+x).join("\n"),1200),
     contacts:cut(contactsFor(E.lvl,r).map(c=>`- ${c.w} · ${roleInfo(c.id).label}`).join("\n"),1500),
-    actions:cut(todoFor(E.lvl,r).map(t=>"- [ ] "+t).join("\n"),2000)});
-  window.open(`https://github.com/${encodeURIComponent(g.owner)}/${encodeURIComponent(g.repo)}/issues/new?${p}`,"_blank","noopener");
+    actions:cut(todoFor(E.lvl,r).map(t=>"- "+t).join("\n"),2000)});
+  window.open(`${jotformUrl()}?${p}`,"_blank","noopener");
 }
 function bindExports(){
   $("#btnPrint").onclick=()=>{ refresh(); window.print(); };
@@ -1206,8 +1200,7 @@ function renderRes(){
 function bindSettings(){
   ["n1","n2","n3"].forEach(k=>{ const el=$("#s_"+k); el.value=SEUILS[k]; el.onchange=()=>{ SEUILS[k]=Math.max(1,+el.value||DEFAULT_SEUILS[k]); store.set("seuils",SEUILS); refresh(); }; });
   $("#pointsTable").innerHTML=BAREME.map(b=>`<tr><td>${esc(b.label)}</td><td class="num">${b.pts}</td></tr>`).join("")+`<tr><td><b>SSE qualifiée, demande de l’ARS ou plan blanc</b></td><td class="num"><b>activation d’office</b></td></tr>`;
-  const g=ghRepo(); $("#s_owner").value=g.owner||""; $("#s_repo").value=g.repo||"";
-  ["s_owner","s_repo"].forEach(id=>$("#"+id).onchange=()=>store.set("gh",{owner:$("#s_owner").value.trim(), repo:$("#s_repo").value.trim()}));
+  $("#s_jf").value=jotformUrl(); $("#s_jf").onchange=()=>{ const v=$("#s_jf").value.trim(); if(v && v!==JOTFORM_DEFAUT) store.set("jotform",v); else store.del("jotform"); $("#s_jf").value=jotformUrl(); };
   const th=store.get("theme","auto"); applyTheme(th); $$("input[name=theme]").forEach(i=>{ i.checked=i.value===th; i.onchange=()=>{ store.set("theme",i.value); applyTheme(i.value); }; });
   $("#btnRiskReset").onclick=()=>{ if(confirm("Revenir aux cotations proposées ?")){ RISK_OVR={}; store.del("risks"); renderCarto(); refresh(); } };
   $("#btnRiskCsv").onclick=()=>{ const rows=[["Risque","Volet ORSAN","Cinétique","F","G","IRi","Niveau"]].concat(RISKS.filter(r=>r.id!=="autre").map(r=>{const{F,G}=riskFG(r);return [r.nom,r.orsan,r.cin,F,G,F*G,iriLevel(F*G).txt];}));
