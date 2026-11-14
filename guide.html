@@ -107,6 +107,24 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}
 th,td{text-align:left;padding:.45rem .55rem;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft)}
 .lvl{display:inline-block;font-weight:700;border-radius:4px;padding:0 .4rem}
+
+/* Cartes réflexes */
+.flips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:.8rem;margin-top:.8rem}
+.flip{perspective:900px;height:190px;border:0;padding:0;background:none;text-align:left}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip[aria-pressed="true"] .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--line)}
+.flip .f{background:var(--surface);justify-content:center}
+.flip .f .ico{font-size:1.9rem;line-height:1}
+.flip .f b{font-size:1.05rem}
+.flip .f small{color:var(--muted);margin-top:auto;font-size:.8rem}
+.flip .b{background:var(--lys-soft);transform:rotateY(180deg);font-size:.95rem;overflow:auto}
+.flip .b b{color:var(--lys)}
+.flip.red .f{border-left:5px solid var(--n3)}
+.flip.amber .f{border-left:5px solid var(--n2)}
+.flip.green .f{border-left:5px solid var(--ok)}
+.flip.blue .f{border-left:5px solid var(--lys)}
+@media (prefers-reduced-motion: reduce){.flip .in{transition:none}}
 footer{max-width:1100px;margin:0 auto;padding:0 1rem 2rem;font-size:.88rem;color:var(--muted)}
 @media print{.steps,.nav-steps,header .go{display:none}.layout{display:block}.step-card{display:block!important;break-inside:avoid}}
 </style>
@@ -130,6 +148,12 @@ footer{max-width:1100px;margin:0 auto;padding:0 1rem 2rem;font-size:.88rem;color
       <div class="mini"><b>⏱️ Combien de temps ?</b>3 à 5 minutes pour qualifier une alerte. Le niveau se met à jour à chaque case cochée.</div>
     </div>
     <div class="warn"><b>L’outil aide à décider, il ne remplace pas le jugement.</b> Une urgence vitale relève du 15. Seuls l’ARS, le préfet ou le ministre qualifient une situation sanitaire exceptionnelle : la CPTS décide d’activer sa propre cellule.</div>
+  </section>
+
+
+  <section class="panel">
+    <div style="display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap"><h2 style="font-size:1.2rem">Les 12 cartes réflexes</h2><span class="muted" style="font-size:.9rem">Cliquez sur une carte pour la retourner.</span><button class="btn ghost" type="button" id="flipAll" style="margin-left:auto">Tout retourner</button></div>
+    <div class="flips" id="flips"></div>
   </section>
 
   <div class="layout">
@@ -291,6 +315,29 @@ function render(){
   renderSim(); renderQuiz();
 }
 render();
+
+const CARDS=[
+ ["red","🚑","Urgence vitale","<b>15 ou 112.</b> Ne vous rendez pas sur les lieux sans y avoir été invité par le SAMU."],
+ ["blue","📥","Je reçois une alerte","Je note le message <b>mot pour mot</b>, l’heure, l’émetteur et son numéro (étape 1)."],
+ ["amber","📞","Avant de mobiliser","Je <b>rappelle l’émetteur</b> pour confirmer l’alerte (fiche réflexe 1)."],
+ ["amber","📰","Le signal vient d’un média","Je <b>vérifie auprès de l’ARS</b> ou de la préfecture avant toute action."],
+ ["blue","🧭","Quel risque ?","Je choisis le type de risque : l’outil affiche le volet ORSAN, la cotation et les sites à surveiller."],
+ ["blue","🗺️","Qui est touché ?","Je coche les communes : l’outil propose les <b>référents de zone</b>, les mairies et les MSP."],
+ ["red","⚡","Activation d’office","SSE qualifiée, <b>demande de l’ARS</b> ou plan blanc : niveau <b>N3</b> au minimum."],
+ ["amber","⏳","Niveau N2 · Pré-alerte","Le <b>pilote</b> (ou son suppléant) décide de l’activation de la cellule <b>sous 24 h</b>."],
+ ["blue","☎️","Qui appeler ?","La liste est déjà triée : <b>Immédiat</b>, puis moins d’1 h, moins de 4 h, moins de 24 h."],
+ ["green","📝","Garder une trace","Main courante horodatée, <b>Enregistrer l’alerte</b> (Jotform) et export JSON chaque soir."],
+ ["red","🔒","Données sensibles","<b>Jamais</b> de nom de patient ni de donnée de santé dans le formulaire ou la synthèse."],
+ ["green","🔁","Fin de crise","Retour d’expérience, bouton <b>Nouvelle alerte</b> (archive), mise à jour de l’annuaire."]
+];
+function renderFlips(){
+  const box=document.getElementById("flips");
+  box.innerHTML=CARDS.map(([c,i,t,b],k)=>`<button type="button" class="flip ${c}" aria-pressed="false" aria-label="${t} : retourner la carte"><div class="in"><div class="f"><span class="ico" aria-hidden="true">${i}</span><b>${t}</b><small>Carte ${k+1} / ${CARDS.length} · retourner ↻</small></div><div class="b"><b>${t}</b><span>${b}</span></div></div></button>`).join("");
+  box.querySelectorAll(".flip").forEach(f=>f.onclick=()=>f.setAttribute("aria-pressed", f.getAttribute("aria-pressed")==="true"?"false":"true"));
+  const all=document.getElementById("flipAll");
+  all.onclick=()=>{ const cards=[...box.querySelectorAll(".flip")]; const anyFront=cards.some(f=>f.getAttribute("aria-pressed")!=="true"); cards.forEach(f=>f.setAttribute("aria-pressed", anyFront?"true":"false")); all.textContent=anyFront?"Tout remettre":"Tout retourner"; };
+}
+renderFlips();
 </script>
 </body>
 </html>
