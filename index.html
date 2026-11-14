@@ -423,7 +423,7 @@ details.panel[open]>summary{margin-bottom:.6rem}
 <!-- =============== RESSOURCES =============== -->
 <section class="view" id="view-ressources" hidden>
   <div class="panel"><h2>Filtrer par territoire</h2>
-    <p class="hint">S’applique aux lieux d’accueil et aux moyens communaux.</p>
+    <p class="hint">S’applique aux pharmacies, aux lieux d’accueil et aux moyens communaux.</p>
     <div class="filters">
       <div class="field"><label for="fx_zone">Zone</label><select id="fx_zone"><option value="">Tout le territoire</option><option value="o">Zone 1 · secteur ouest</option><option value="e">Zone 2 · secteur est</option></select></div>
       <div class="field"><label for="fx_com">Commune</label><select id="fx_com"></select></div>
@@ -442,6 +442,21 @@ details.panel[open]>summary{margin-bottom:.6rem}
   <div class="cols2">
     <div class="panel"><h2>Offre de soins de proximité</h2><p class="hint">Plan SSE CPTS Artois Lys, mai 2023. Croiser avec Rezone et Cartosanté pour l’effectif à jour.</p><div id="resSoins"></div></div>
     <div class="panel"><h2>Sources de veille</h2><p class="hint">À consulter en veille renforcée et à chaque point de situation.</p><div id="resVeille"></div></div>
+  </div>
+  <div class="panel"><h2>Pharmacies du territoire</h2>
+    <p class="hint">Relevé Google Maps, novembre 2026 : à vérifier avec l’Ordre des pharmaciens. Aucune officine trouvée à Calonne-sur-la-Lys, Mont-Bernanchon, Vieille-Chapelle, Festubert, Neuve-Chapelle et Lorgies.</p>
+    <div class="tbl-wrap"><table><thead><tr><th>Commune</th><th>Zone</th><th>Pharmacie</th><th>Adresse</th><th>Téléphone</th></tr></thead><tbody id="pharmaTable"></tbody></table></div>
+  </div>
+  <div class="panel" id="recensement"><h2>Recensement des acteurs : équipements et référents</h2>
+    <p class="intro">Chaque acteur (MSP, cabinet, pharmacie, EHPAD, mairie) indique son référent crise et ses équipements mobilisables. Cliquez sur « Compléter » pour ouvrir le formulaire déjà au nom de la structure, ou sur « Copier l’invitation » pour envoyer le lien par mail.</p>
+    <div class="note">Les réponses arrivent dans le compte Jotform de la CPTS. Elles ne sont pas publiées sur cette page : la coordination les reporte ensuite dans l’annuaire de crise.</div>
+    <div class="filters">
+      <div class="field"><label for="rc_type">Type d’acteur</label><select id="rc_type"><option value="">Tous</option><option>Structure d’exercice coordonné</option><option>Pharmacie</option><option>EHPAD</option><option>Mairie</option></select></div>
+      <div class="field grow"><label for="rc_q">Rechercher</label><input type="search" id="rc_q" placeholder="ex. Laventie, MSP, mairie…"></div>
+      <button class="btn ghost" type="button" id="rc_autre">Autre acteur…</button>
+      <span class="count" id="rc_count" aria-live="polite"></span>
+    </div>
+    <div class="tbl-wrap" style="margin-top:.8rem"><table><thead><tr><th>Acteur</th><th>Type</th><th>Commune</th><th></th></tr></thead><tbody id="rcTable"></tbody></table></div>
   </div>
   <div class="panel"><h2>Lieux d’accueil et de regroupement (CARE)</h2><p class="hint">Recensement CABBALR. Les communes de la CC Flandre Lys (Laventie, Fleurbaix, Sailly-sur-la-Lys) et Lestrem ne figurent pas dans ce fichier : à compléter avec les mairies (annexe 3).</p><div class="tbl-wrap"><table><thead><tr><th>Commune</th><th>Lieu</th><th>Adresse</th><th>Places</th><th>Sanitaires</th><th>Douches</th><th>Cuisson</th><th>Froid</th></tr></thead><tbody id="careTable"></tbody></table></div></div>
   <div class="panel"><h2>Moyens communaux mobilisables</h2><div class="tbl-wrap"><table><thead><tr><th>Commune</th><th>Personnel communal</th><th>Professionnels de santé recensés</th><th>Matériel utile</th><th>Locaux sensibles</th></tr></thead><tbody id="moyensTable"></tbody></table></div></div>
@@ -618,6 +633,27 @@ const RISKS = [
    veille:["ars","pref62"], roles:[], actions:["Qualifier l’événement avec l’émetteur et l’ARS"]}
 ];
 
+/* Pharmacies : relevé Google Maps (novembre 2026), à vérifier. Coordonnées professionnelles publiques. */
+const PHARMACIES = [
+  {id:"ph_hinges",     commune:"Hinges",            nom:"Pharmacie d’Hinges",          adr:"1065 rue de Béthune",            tel:"03 21 57 25 27"},
+  {id:"ph_locon",      commune:"Locon",             nom:"Pharmacie de Locon",          adr:"53 rue du 11 Novembre",          tel:"03 21 27 80 86"},
+  {id:"ph_lestrem",    commune:"Lestrem",           nom:"Pharmacie de Lestrem",        adr:"45 place du 8 Mai 1945",         tel:"03 21 02 46 72"},
+  {id:"ph_couture",    commune:"La Couture",        nom:"Pharmacie de La Couture",     adr:"95 rue du Colonel Bento Rôma",   tel:"03 21 02 19 64"},
+  {id:"ph_richebourg", commune:"Richebourg",        nom:"Pharmacie de Richebourg",     adr:"1 place du Général de Gaulle",   tel:"03 21 26 06 64"},
+  {id:"ph_croixdor",   commune:"Laventie",          nom:"Pharmacie de la Croix d’Or",  adr:"130 rue Robert Parfait",         tel:"03 21 27 60 66"},
+  {id:"ph_lalloeu",    commune:"Laventie",          nom:"Pharmacie de Lalloeu",        adr:"6 rue du Général de Gaulle",     tel:"03 21 66 19 66"},
+  {id:"ph_bacstmaur",  commune:"Sailly-sur-la-Lys", nom:"Pharmacie du Bac Saint-Maur", adr:"3200 rue de la Lys",             tel:"03 21 27 61 50"},
+  {id:"ph_leroy",      commune:"Sailly-sur-la-Lys", nom:"Pharmacie Leroy",             adr:"1126 rue de la Lys",             tel:"03 21 26 98 26"},
+  {id:"ph_fleurbaix",  commune:"Fleurbaix",         nom:"Pharmacie de Fleurbaix",      adr:"28 bis rue de la Malassise",     tel:"03 21 65 61 30"}
+];
+const EHPADS = [
+  {id:"ehpad_lestrem", nom:"EHPAD de Lestrem", commune:"Lestrem"},
+  {id:"ehpad_couture", nom:"EHPAD de La Couture", commune:"La Couture"},
+  {id:"ehpad_stjean",  nom:"EHPAD St Jean", commune:""}
+];
+/* Formulaire Jotform de recensement (équipements + référent). Vide tant qu’il n’est pas créé. */
+const RECENSEMENT_URL = "";
+
 /* Rôles de l'annuaire. defaut : uniquement des coordonnées institutionnelles publiques.
    Les noms et coordonnées personnelles sont importés dans l'onglet Annuaire. */
 const ROLE_GROUPS = [
@@ -662,6 +698,8 @@ const ROLE_GROUPS = [
     {id:"ccas", label:"CCAS des communes (registres canicule et grand froid)"},
     {id:"cpts_voisines", label:"CPTS voisines (Béthunois, Collines d’Artois…)"}
   ]},
+  {g:"Pharmacies", roles: PHARMACIES.map(p=>({id:p.id, label:`${p.nom} (${p.commune})`, def:{tel:p.tel}}))},
+  {g:"EHPAD", roles: EHPADS.map(e=>({id:e.id, label:e.nom}))},
   {g:"Mairies", roles: COMMUNES.map(c=>({id:"mairie_"+c.insee, label:"Mairie de "+c.nom}))}
 ];
 
@@ -1183,6 +1221,41 @@ function bindAnn(){
 }
 
 /* ============ Ressources ============ */
+const RC_ACTEURS = () => [
+  ...[["msp_alloeu","MSP de l’Alloeu","Laventie"],["msp_fleurbaix","MSP de Fleurbaix","Fleurbaix"],["msp_sailly","MSP de Sailly-sur-la-Lys","Sailly-sur-la-Lys"],["msp_lestrem","MSP de Lestrem","Lestrem"],["mm_richebourg","Cabinet médical de Richebourg","Richebourg"]].map(([id,nom,commune])=>({id,nom,commune,type:"Structure d’exercice coordonné"})),
+  ...PHARMACIES.map(p=>({id:p.id,nom:p.nom,commune:p.commune,type:"Pharmacie"})),
+  ...EHPADS.map(e=>({id:e.id,nom:e.nom,commune:e.commune,type:"EHPAD"})),
+  ...COMMUNES.map(c=>({id:"mairie_"+c.insee,nom:"Mairie de "+c.nom,commune:c.nom,type:"Mairie"}))
+];
+function rcLink(a){ if(!RECENSEMENT_URL) return ""; const p=new URLSearchParams(a?{typeActeur:a.type,structure:a.nom,commune:a.commune,idActeur:a.id}:{}); return `${RECENSEMENT_URL}${a?"?"+p:""}`; }
+function rcInvitation(a){ return `Bonjour,
+
+Dans le cadre de son plan de gestion des situations sanitaires exceptionnelles, la CPTS Artois Lys recense les référents et les équipements mobilisables de chaque acteur du territoire (MSP, pharmacies, EHPAD, mairies).
+
+Pourriez-vous compléter ce court formulaire pour ${a.nom} (5 minutes) :
+${rcLink(a)}
+
+Ces informations restent internes à la cellule de crise de la CPTS.
+
+Merci pour votre aide,
+La coordination de la CPTS Artois Lys
+${CPTS.tel} · ${CPTS.mail}`; }
+function renderRecensement(){
+  const q=norm($("#rc_q").value).trim(), t=$("#rc_type").value;
+  const all=RC_ACTEURS(), list=all.filter(a=>(!t||a.type===t)&&(!q||norm(a.nom+" "+a.commune+" "+a.type).includes(q)));
+  $("#rc_count").textContent = list.length===all.length ? `${all.length} acteurs` : `${list.length} sur ${all.length}`;
+  const ready=!!RECENSEMENT_URL;
+  $("#rcTable").innerHTML = list.map(a=>`<tr><td><b>${esc(a.nom)}</b></td><td>${esc(a.type)}</td><td>${esc(a.commune||"—")}</td>
+    <td><div class="btns" style="margin:0">${ready?`<a class="btn" href="${esc(rcLink(a))}" target="_blank" rel="noopener">Compléter</a><button class="btn ghost" type="button" data-inv="${a.id}">Copier l’invitation</button>`:`<span class="muted">Formulaire en préparation</span>`}</div></td></tr>`).join("")
+    || `<tr class="empty-row"><td colspan="4">Aucun acteur ne correspond.</td></tr>`;
+  $$("#rcTable [data-inv]").forEach(b=>b.onclick=async()=>{ const a=all.find(x=>x.id===b.dataset.inv); const txt=rcInvitation(a);
+    try{ await navigator.clipboard.writeText(txt); toast("Invitation copiée : collez-la dans votre mail"); }catch(e){ download(`invitation-${a.id}.txt`,txt,"text/plain"); } });
+}
+function bindRecensement(){
+  $("#rc_q").addEventListener("input",renderRecensement); $("#rc_type").addEventListener("change",renderRecensement);
+  $("#rc_autre").onclick=()=>{ if(!RECENSEMENT_URL){ toast("Le formulaire de recensement n’est pas encore prêt"); return; } window.open(rcLink(null),"_blank","noopener"); };
+  renderRecensement();
+}
 function renderRes(){
   $("#resSoins").innerHTML=SOINS.map(s=>`<h3 style="margin-top:.8rem">${esc(s.t)}</h3><ul class="actions-list">${s.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`).join("");
   const groups=[["Alertes officielles",["dgs","ars","spf","pref62","pref59","fralert"]],["Météo et environnement",["meteo","vigicrues","atmo","pollens","georisques"]],["Continuité des soins",["ansm","cyber","enedis"]],["Renforts et offre de soins",["renfort","reserve","rezone","cartosante"]]];
@@ -1193,6 +1266,8 @@ function renderRes(){
   $("#fx_count").textContent=`${care.length} lieu${care.length>1?"x":""} d’accueil${places?` · ${places.toLocaleString("fr-FR")} places recensées`:""} · ${moy.length} commune${moy.length>1?"s":""} avec moyens`;
   if(FLT.x.alert && !S.com.length) $("#fx_count").textContent="Aucune commune cochée dans l’alerte en cours";
   $("#careTable").innerHTML=(care.length?"":`<tr class="empty-row"><td colspan="8">Aucun lieu ne correspond aux filtres. Les communes de la CC Flandre Lys et Lestrem ne sont pas encore recensées.</td></tr>`)+care.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td class="num">${r[3]??""}</td><td>${esc(r[4])}</td><td>${esc(r[5])}</td><td>${esc(r[6])}</td><td>${esc(r[7])}</td></tr>`).join("");
+  const ph=PHARMACIES.filter(x=>comMatch(x.commune));
+  $("#pharmaTable").innerHTML=(ph.length?"":`<tr class="empty-row"><td colspan="5">Aucune pharmacie recensée pour ces filtres.</td></tr>`)+ph.map(x=>`<tr><td>${esc(x.commune)}</td><td>${zoneOf(x.commune)==="o"?"Ouest":"Est"}</td><td><b>${esc(x.nom)}</b></td><td>${esc(x.adr)}</td><td><a href="tel:${x.tel.replace(/\s/g,"")}">${esc(x.tel)}</a></td></tr>`).join("");
   $("#moyensTable").innerHTML=(moy.length?"":`<tr class="empty-row"><td colspan="5">Aucune commune ne correspond aux filtres.</td></tr>`)+moy.map(([c,m])=>`<tr><td>${esc(c)}</td><td class="num">${m.pc??""}</td><td>${esc(m.ps)}</td><td>${esc(m.mat)}</td><td>${esc(m.loc)}</td></tr>`).join("");
 }
 
@@ -1215,7 +1290,7 @@ $$("nav.tabs button").forEach(b=>b.addEventListener("click",()=>showView(b.datas
 
 /* ============ Démarrage ============ */
 renderRiskSelect(); bindFilters(); bindForm(); renderMap(); renderComList(); renderMC(); bindExports();
-renderCarto(); renderAnn(); bindAnn(); renderRes(); bindSettings(); refresh();
+renderCarto(); renderAnn(); bindAnn(); renderRes(); bindRecensement(); bindSettings(); refresh();
 </script>
 </body>
 </html>
